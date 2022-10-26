@@ -1,0 +1,19 @@
+<section class="characterList">
+    <h3>Characters</h3>
+        {{#each character}}
+            <div>
+                <img src="{{image_url}}" alt="{{name}}">
+                <div>
+                    <h4>{{name}}</h4>
+                    <p>Lv: {{level}}</p>
+                    <p>Str: {{strength}}</p>
+                    <p>Def: {{defense}}</p>
+                    <p>Vit: {{vitality}}</p>
+                </div>
+                <button>X</button>
+            </div>
+        {{/each}}
+    <button>Create New Character</button>
+    <button>Select Character</button>
+</section>
+<script src="/js/characterLanding.js"></script>
