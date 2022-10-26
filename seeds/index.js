@@ -1,5 +1,6 @@
 const sequelize = require('../config/connection.js');
 const seedUser = require('./userSeeds');
+const seedCharacter = require('./characterSeeds');
 
 
 const seedAll = async () => {
@@ -7,8 +8,8 @@ const seedAll = async () => {
     console.log('\n---- DATABASE SYNCED ----\n');
     await seedUser();
     console.log('\n---- USER SEEDED ----\n');
-
-
+    await seedCharacter();
+    console.log('\n---- CHARACTER SEEDED ----\n');
 
     process.exit(0);
 }
