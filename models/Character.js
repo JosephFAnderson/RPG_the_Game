@@ -77,7 +77,7 @@ Character.init(
         defaultValue: "https://upload.wikimedia.org/wikipedia/en/7/73/Pikachu_artwork_for_Pok%C3%A9mon_Red_and_Blue.webp",
         allowNull: false,
         validate: {
-            isNumeric: true
+            isUrl: true
         }
     },
     user_id: {
