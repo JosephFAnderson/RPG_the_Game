@@ -10,4 +10,12 @@ router.get('/login', async (req, res) => {
     }
 });
 
+router.get('/sign_up', async (req, res) => {
+    try{
+        res.render('sign_up');
+    }catch (err) {
+        res.status(500).json(err);
+    }
+})
+
 module.exports = router;
