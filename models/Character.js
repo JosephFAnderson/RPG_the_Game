@@ -73,9 +73,9 @@ Character.init(
         }
     },
     image_url: {
-        type: DataTypes.TEXT,
-        defaultValue: "https://upload.wikimedia.org/wikipedia/en/7/73/Pikachu_artwork_for_Pok%C3%A9mon_Red_and_Blue.webp",
+        type: DataTypes.STRING,
         allowNull: false,
+        defaultValue: "https://upload.wikimedia.org/wikipedia/en/7/73/Pikachu_artwork_for_Pok%C3%A9mon_Red_and_Blue.webp",        
         validate: {
             isUrl: true
         }
@@ -83,13 +83,17 @@ Character.init(
     user_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: "User",
+            model: "users",
             id: 'id'
         }
     },
     weapon_id: {
         type: DataTypes.INTEGER,
         allowNull: true,
+        references: {
+            model: "weapons",
+            id: "id"
+        },
         validate: {
           isNumeric: true
         }
@@ -97,6 +101,10 @@ Character.init(
     armor_id: {
         type: DataTypes.INTEGER,
         allowNull: true,
+        references: {
+            model: "armors",
+            id: "id"
+        },
         validate: {
           isNumeric: true
         }
@@ -107,7 +115,7 @@ Character.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'character',
+    modelName: "characters"
   }
 );
 

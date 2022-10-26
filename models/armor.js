@@ -36,7 +36,7 @@ Armor.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'armor',
+    modelName: 'armors',
     }
 );
 
