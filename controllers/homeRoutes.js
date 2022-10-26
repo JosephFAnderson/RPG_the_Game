@@ -10,6 +10,14 @@ router.get('/login', async (req, res) => {
     }
 });
 
+router.get('/sign_up', async (req, res) => {
+    try{
+        res.render('sign_up');
+    }catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 router.get('/characterlanding', withAuth, async (req, res) => {
     try{
         const charData = await Character.findAll({where: { user_id: req.session.user_id }});
@@ -18,6 +26,6 @@ router.get('/characterlanding', withAuth, async (req, res) => {
     }catch (err) {
         res.status(500).json(err);
     }
-})
+});
 
 module.exports = router;
