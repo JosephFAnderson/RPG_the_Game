@@ -2,6 +2,14 @@ const router = require('express').Router();
 const {User, Character} = require('../models');
 const withAuth = require('../utils/auth');
 
+
+router.get('/', async(req, res) => {
+    try{
+        res.render('home');
+    }catch (err) {
+        res.status(500).json(err);
+    }
+});
 router.get('/login', async (req, res) => {
     try{
         res.render('login');
@@ -27,5 +35,6 @@ router.get('/characterlanding', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
+
 
 module.exports = router;
