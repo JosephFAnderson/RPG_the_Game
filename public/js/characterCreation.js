@@ -7,8 +7,26 @@ const upload = async (event) => {
 
 const creation = async (event) => {
     event.preventDefault();
+    const image_urlEl = document.querySelector('#charImage');
+    const nameEl = document.querySelector('#name');
+    const strengthEl = document.querySelector('#str');
+    const defenseEl = document.querySelector('#def');
+    const vitalityEl = document.querySelector('#vit');
 
+    const image_url = image_urlEl.src;
+    const name = nameEl.value.trim();
+    const strength = strengthEl.value.trim();
+    const defense = defenseEl.value.trim();
+    const vitality = vitalityEl.value.trim();
 
+    if(name && image_url && strength && defense && vitality){
+        const res = await fetch('/api/character/', {
+            method: 'POST',
+            body: JSON.stringify({ name, image_url, strength, defense, vitality}),
+            headers: { 'Content-type': 'application/json' }
+        });
+        res.ok ? document.location.replace('/characterLanding') :alert( await res.json());
+    }
 }
 
 const minusCountStr = () => {
