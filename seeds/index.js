@@ -4,6 +4,7 @@ const seedCharacter = require('./characterSeeds');
 const seedWeapon = require('./weaponSeeds');
 const seedArmor = require('./armorSeeds');
 const seedDeads = require('./deadSeeds');
+const seedMonsters = require('./monsterSeeds')
 
 const seedAll = async () => {
     await sequelize.sync({force: true});
