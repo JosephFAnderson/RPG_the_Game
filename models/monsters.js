@@ -67,8 +67,8 @@ Monster.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: "characters"
+        modelName: "monsters"
     }
 );
 
-module.exports = monsters;
+module.exports = Monsters;
