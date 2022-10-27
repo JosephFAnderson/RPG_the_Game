@@ -43,7 +43,6 @@ router.get('/town/:id', withAuth, async (req, res) => {
         req.session.save( () => {
             req.session.character_id = charData.id;
         });
-        console.log(character);
         res.render('town', {character});
     }catch (err) {
         res.status(500).json(err);
