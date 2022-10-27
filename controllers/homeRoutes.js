@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {User, Character} = require('../models');
+const {User, Character, Armor, Weapon} = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -10,6 +10,7 @@ router.get('/', async(req, res) => {
         res.status(500).json(err);
     }
 });
+
 router.get('/login', async (req, res) => {
     try{
         res.render('login');
@@ -41,12 +42,32 @@ router.get('/town/:id', withAuth, async (req, res) => {
         const charData = await Character.findByPk(1).catch((err) => res.json(err));
         const character = charData.get({plain: true});
         req.session.save( () => {
-            req.session.character_id = charData.id;
+            req.session.character_id = character.id;
+            console.log(req.session.character_id)
         });
         res.render('town', {character});
     }catch (err) {
         res.status(500).json(err);
     }
 });
+
+router.get('/shop/:id', withAuth, async (req, res) => {
+    try{
+        const charData = await Character.findByPk(req.params.id);
+        const character = charData.get({ plain: true });
+        
+
+        const wepData = await Weapon.findAll();
+        const weapons = wepData.map(weap => weap.get({plain: true}));
+
+        const armData = await Armor.findAll();
+        const armors = armData.map(arm => arm.get({plain: true}));
+        
+        res.render('shop', {character, weapons, armors});
+    }catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }    
+})
 
 module.exports = router;
