@@ -1,4 +1,4 @@
-const { monsters, Monsters } = require('../models');
+const { Monsters } = require('../models');
 
 const monstersData = [
     {
