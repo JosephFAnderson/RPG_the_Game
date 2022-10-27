@@ -52,8 +52,23 @@ Monster.init(
         },
         gold_dropped: {
             type: Datatypes.INTEGER,
-
+            allowNull: false,
+            validate: {
+                isNumeric: true
+            },
+        },
+        monster_url: {
+            type: DataTypes.STRING,
+            allowNull: false,
         }
-
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: "monsters"
     }
-)
+);
+
+module.exports = Monsters;

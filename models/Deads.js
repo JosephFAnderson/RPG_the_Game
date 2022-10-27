@@ -59,6 +59,15 @@ Deads.init(
             }
         },
 
-    }
-// sequalize
-)
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: "deads"
+      }
+
+);
+
+module.exports = Deads;
