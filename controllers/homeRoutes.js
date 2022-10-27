@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {User, Character, Armor, Weapon} = require('../models');
+const {User, Character, Armor, Weapon, Dead} = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -76,6 +76,18 @@ router.get('/shop/:id', withAuth, async (req, res) => {
         console.log(err);
         res.status(500).json(err);
     }    
-})
+});
+
+router.get('/graveyard', withAuth, async (req, res) => {
+    try{
+        const deadsData = await Dead.findAll({where: { user_id: req.session.user_id }});
+        const Deads = deadsData.map(fallen => fallen.get({plain: true}));
+        console.log(Deads);
+        res.render('graveyard', { Deads })
+    }catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 
 module.exports = router;

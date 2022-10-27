@@ -1,0 +1,12 @@
+<section class="deads">
+    <h3>Fallen Heros</h3>
+    {{#each Deads as |Dead| }}
+        <div data-id="{{id}}">
+                <h4 data-id="{{id}}">{{name}}</h4>
+                    <p data-id="{{id}}">Lvl: {{level}}</p>
+                    <p data-id="{{id}}">Battles: {{battle_count}}</p>
+                    <p data-id="{{id}}">Monster: {{monster_id}}</p>
+                    <p data-id="{{id}}">User: {{user_id}}</p>
+        </div>
+    {{/each}}
+</section>
