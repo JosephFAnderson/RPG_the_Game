@@ -26,7 +26,6 @@ const buyItem = async (event) => {
         const char_id = document.querySelector('#townBtn').dataset.id;
 
         if(curGold < price){
-            console.log("Need more money");
             return;
         }
 
