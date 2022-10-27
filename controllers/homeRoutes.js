@@ -72,13 +72,11 @@ router.get('/shop/:id', withAuth, async (req, res) => {
 
 router.get('/graveyard', withAuth, async (req, res) => {
     try{
-        console.log(req.session.user_id)
         const deadsData = await Dead.findAll({where: { user_id: req.session.user_id }});
-        console.log(deadsData);
-        const Deads = charData.map(fallen => fallen.get({plain: true}));
+        const Deads = deadsData.map(fallen => fallen.get({plain: true}));
+        console.log(Deads);
         res.render('graveyard', { Deads })
     }catch (err) {
-        console.log(err);
         res.status(500).json(err);
     }
 });
