@@ -3,7 +3,7 @@ const arena = async () => {
 }
 
 const shop = async () => {
-    document.location.replace('/shop')
+    document.location.replace(`/shop/${shopBtn.dataset.id}`)
 }
 
 const adventure = async () => {

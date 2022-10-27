@@ -1,0 +1,30 @@
+<div class="tab">
+    <button class="tablinks" onClick="filterShop(event, 'Weapon')">Weapons</button>
+    <button class="tablinks" onClick="filterShop(event, 'Armor')">Armors</button>
+</div>
+
+<div id="Weapon" class="tabcontent">
+    {{#each weapons as |weapon|}}
+    <section data-id="{{ id }}" class="shopCard">
+        <p>{{ name }}</p>
+        <p>Damage: {{ damage }}</p>
+        <p>Price: {{ price }} gold</p>
+    </section>
+    {{/each}}
+</div>
+
+<div id="Armor" class="tabcontent">
+    {{#each armors as |armor|}}
+    <section data-id="{{ id }}" class="shopCard">
+        <p>{{ name }}</p>
+        <p>Defense: {{ defense }}</p>
+        <p>Price: {{ price }} gold</p>
+    </section>
+    {{/each}}
+</div>
+
+<div>
+    You have {{character.gold}} Gold
+</div>
+<script src="/js/shop.js"></script>
+
