@@ -3,7 +3,7 @@ const seedUser = require('./userSeeds');
 const seedCharacter = require('./characterSeeds');
 const seedWeapon = require('./weaponSeeds');
 const seedArmor = require('./armorSeeds');
-
+const seedDeads = require('./deadSeeds');
 
 const seedAll = async () => {
     await sequelize.sync({force: true});
@@ -16,7 +16,8 @@ const seedAll = async () => {
     console.log('\n---- WEAPON SEEDED ----\n');
     await seedArmor();
     console.log('\n---- Armor SEEDED ----\n');
-
+    await seedDeads();
+    console.log('\n---- Dead SEEDED ----\n');
     process.exit(0);
 }
 

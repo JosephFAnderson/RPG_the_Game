@@ -40,14 +40,14 @@ Monster.init(
             }
         },
         experience_given: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
                 isNumeric: true
             },
         },
         gold_dropped: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
                 isNumeric: true
@@ -67,4 +67,4 @@ Monster.init(
     }
 );
 
-module.exports = Monsters;
+module.exports = Monster;
