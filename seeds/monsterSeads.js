@@ -1,2 +1,0 @@
-const { monsters } = require('../models');
-
