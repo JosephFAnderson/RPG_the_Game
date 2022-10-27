@@ -6,3 +6,7 @@ const gotograve = document.querySelector('#visitGrav');
 gotograve.addEventListener('click', () => {
     document.location.replace('/graveyard');
 });
+const leavegame = document.querySelector('#logOut');
+leavegame.addEventListener('click', () => {
+    document.location.replace('/');
+});
