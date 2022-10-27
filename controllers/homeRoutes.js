@@ -37,6 +37,14 @@ router.get('/characterlanding', withAuth, async (req, res) => {
     }
 });
 
+router.get('/characterCreation', withAuth, async (req, res) => {
+    try{
+        res.render('characterCreation')
+    }catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 router.get('/town/:id', withAuth, async (req, res) => {
     try{
         const charData = await Character.findByPk(1).catch((err) => res.json(err));
