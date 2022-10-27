@@ -81,13 +81,6 @@ router.get('/graveyard', withAuth, async (req, res) => {
     }
 });
 
-// router.post('/logout', function(req, res, next) {
-//     req.logout(function(err) {
-//       if (err) { return next(err); }
-//       res.redirect('/');
-//     });
-//   });
-
   router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
       req.session.destroy(() => {
