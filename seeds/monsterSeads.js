@@ -1,2 +1,2 @@
-const { monsters } = require('../models');
+const { Monster } = require('../models');
 

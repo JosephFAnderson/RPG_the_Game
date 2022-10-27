@@ -1,4 +1,4 @@
-const { Deads } = require('../models');
+const { Dead } = require('../models');
 
 const deadsData = [
     {
