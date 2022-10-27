@@ -19,7 +19,6 @@ router.post('/', withAuth, async (req, res) => {
 
 
 router.put('/:id', withAuth, async (req, res) => {
-    req.body.user_id = req.session.user_id;
 
     Character.update(
         req.body,
