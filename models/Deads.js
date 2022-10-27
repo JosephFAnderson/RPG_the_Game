@@ -7,7 +7,7 @@ class Deads extends Model {}
 Deads.init(
     {
         id: {
-            type:  DataTypes.STRING,
+            type:  DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
@@ -45,7 +45,7 @@ Deads.init(
         },
         monster_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             references: {
                 model: "monsters",
                 id: 'id'
