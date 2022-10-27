@@ -1,0 +1,37 @@
+<section>
+    <div>
+        <img id="charImage" src="https://upload.wikimedia.org/wikipedia/en/7/73/Pikachu_artwork_for_Pok%C3%A9mon_Red_and_Blue.webp" alt="main character"/>
+    </div>
+    <div>
+        <form>
+            <input id="characterImage" type="url" placeholder="Image Url">
+        </form>
+        <button type="button" id="uploadBtn">Upload</button>
+    </div>
+    <div>
+        <h3>Character Information</h3>
+        <form>
+            <div>
+                <label>Name</label>
+                <input id="name" type="text">
+            </div>
+            <h2><input type="number" id="points" value="8"> Points Remaining</h2>
+            <label>Strength</label>
+                <input type="button" value="<" onclick="minusCountStr();">
+                    <input id="str" type="number" min="0" value="1">
+                <input type="button" value=">" onclick="addCountStr();">
+            <br>
+            <label>Defense</label>
+                <input type="button" value="<" onclick="minusCountDef();">
+                    <input id="def" type="number" min="0" value="1">
+                <input type="button" value=">" onclick="addCountDef();">
+            <br>
+            <label>Vitality</label>
+                <input type="button" value="<" onclick="minusCountVit();">
+                    <input id="vit" type="number" min="0" value="1">
+                <input type="button" value=">" onclick="addCountVit();">
+        </form>
+        <button id="createBtn">Create Character</button>
+    </div>
+</section>
+<script src="/js/characterCreation.js"></script>
