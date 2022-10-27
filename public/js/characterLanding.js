@@ -21,3 +21,9 @@ const kill = async (event) => {
     });
     res.ok ? document.location.reload() :alert( await res.json());
 }
+const leavegame = document.querySelector('#logOut');
+leavegame.addEventListener('click', () => {
+    document.location.replace('/');
+});
+
+
