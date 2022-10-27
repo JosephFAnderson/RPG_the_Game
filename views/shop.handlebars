@@ -3,28 +3,33 @@
     <button class="tablinks" onClick="filterShop(event, 'Armor')">Armors</button>
 </div>
 
-<div id="Weapon" class="tabcontent">
-    {{#each weapons as |weapon|}}
-    <section data-id="{{ id }}" class="shopCard">
-        <p>{{ name }}</p>
-        <p>Damage: {{ damage }}</p>
-        <p>Price: {{ price }} gold</p>
-    </section>
-    {{/each}}
-</div>
+<section id="shop">
+    <div id="Weapon" class="tabcontent">
+        {{#each weapons as |weapon|}}
+        <section data-type="weapon" data-id="{{ id }}" class="shopCard">
+            <p>{{ name }}</p>
+            <p>Damage: {{ damage }}</p>
+            <p data-price="{{price}}">Price: {{ price }} gold</p>
+            <button class="purchase">Buy Item</button>
+        </section>
+        {{/each}}
+    </div>
 
-<div id="Armor" class="tabcontent">
-    {{#each armors as |armor|}}
-    <section data-id="{{ id }}" class="shopCard">
-        <p>{{ name }}</p>
-        <p>Defense: {{ defense }}</p>
-        <p>Price: {{ price }} gold</p>
-    </section>
-    {{/each}}
-</div>
+    <div id="Armor" class="tabcontent">
+        {{#each armors as |armor|}}
+        <section data-type="armor" data-id="{{ id }}" class="shopCard">
+            <p>{{ name }}</p>
+            <p>Defense: {{ defense }}</p>
+            <p data-price="{{price}}">Price: {{ price }} gold</p>
+            <button class="purchase">Buy Item</button>
+        </section>
+        {{/each}}
+    </div>
+</section>
 
 <section>
-    You have {{character.gold}} Gold
+    <p data-gold={{character.gold}} id="curGold">You have {{character.gold}} gold</p>
+    <button data-id="{{character.id}}" id="townBtn">Return To Town</button>
 </section>
 <script src="/js/shop.js"></script>
 
