@@ -2,6 +2,7 @@ const sequelize = require('../config/connection.js');
 const seedUser = require('./userSeeds');
 const seedCharacter = require('./characterSeeds');
 const seedWeapon = require('./weaponSeeds');
+const seedArmor = require('./armorSeeds');
 
 
 const seedAll = async () => {
@@ -13,6 +14,8 @@ const seedAll = async () => {
     console.log('\n---- CHARACTER SEEDED ----\n');
     await seedWeapon();
     console.log('\n---- WEAPON SEEDED ----\n');
+    await seedArmor();
+    console.log('\n---- Armor SEEDED ----\n');
 
     process.exit(0);
 }

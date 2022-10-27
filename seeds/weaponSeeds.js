@@ -1,6 +1,6 @@
 const { Weapon } = require('../models');
 
-const charData = [
+const weaponData = [
     {
         name: "Iron Sword",
         damage: "1d6",
@@ -18,6 +18,6 @@ const charData = [
     }
 ]
 
-const seedWeapon = () => Weapon.bulkCreate(charData);
+const seedWeapon = () => Weapon.bulkCreate(weaponData);
 
 module.exports = seedWeapon;
