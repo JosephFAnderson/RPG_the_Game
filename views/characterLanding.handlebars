@@ -10,10 +10,10 @@
                     <p data-id="{{character.id}}">Def: {{defense}}</p>
                     <p data-id="{{character.id}}">Vit: {{vitality}}</p>
                 </div>
-                <button data-id="{{character.id}}">X</button>
+                <button data-id="{{character.id}}" class="kill" onclick="kill(event);">X</button>
             </div>
         {{/each}}
-    <button>Create New Character</button>
+    <button id="createBtn">Create New Character</button>
     <button id="selectChar">Select Character</button>
     <button id="visitGrav">Visit Graveyard</button>
     <button id="logOut">Log Out</button>
