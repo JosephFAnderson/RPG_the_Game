@@ -28,4 +28,18 @@ router.get('/characterlanding', withAuth, async (req, res) => {
     }
 });
 
+router.get('/town/:id', withAuth, async (req, res) => {
+    try{
+        const charData = await Character.findByPk(1).catch((err) => res.json(err));
+        const character = charData.get({plain: true});
+        req.session.save( () => {
+            req.session.character_id = charData.id;
+        });
+        console.log(character);
+        res.render('town', {character});
+    }catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;
