@@ -8,32 +8,24 @@ Weapon.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
-        autoincrement:true,
+        autoIncrement: true,
     },
     name:{
-
         type: DataTypes.STRING,
         allowNull: false,
-
     },
     damage:{
-
         type: DataTypes.STRING,
         allowNull: false,
-
     },
     price:{
-
         type: DataTypes.INTEGER,
         allowNULL:false,
     },
-
-
-
-
     },
     {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'weapons',

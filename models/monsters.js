@@ -10,10 +10,6 @@ Monster.init(
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
-            references: {
-                model: "Deads",
-                id: ''
-            }
         },
         name: {
             type: DataTypes.STRING,

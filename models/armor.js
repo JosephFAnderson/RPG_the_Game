@@ -8,7 +8,7 @@ Armor.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
-        autoincrement:true,
+        autoIncrement: true,
     },
     name:{
 
@@ -34,6 +34,7 @@ Armor.init(
     },
     {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'armors',

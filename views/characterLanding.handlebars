@@ -1,16 +1,16 @@
 <section class="characterList">
     <h3>Characters</h3>
         {{#each characters as |character| }}
-            <div>
-                <img src="{{image_url}}" alt="{{name}}">
-                <div>
-                    <h4>{{name}}</h4>
-                    <p>Lv: {{level}}</p>
-                    <p>Str: {{strength}}</p>
-                    <p>Def: {{defense}}</p>
-                    <p>Vit: {{vitality}}</p>
+            <div data-id="{{character.id}}">
+                <img data-id="{{character.id}}" src="{{image_url}}" alt="{{name}}">
+                <div data-id="{{character.id}}">
+                    <h4 data-id="{{character.id}}">{{name}}</h4>
+                    <p data-id="{{character.id}}">Lv: {{level}}</p>
+                    <p data-id="{{character.id}}">Str: {{strength}}</p>
+                    <p data-id="{{character.id}}">Def: {{defense}}</p>
+                    <p data-id="{{character.id}}">Vit: {{vitality}}</p>
                 </div>
-                <button>X</button>
+                <button data-id="{{character.id}}">X</button>
             </div>
         {{/each}}
     <button>Create New Character</button>
