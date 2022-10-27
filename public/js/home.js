@@ -1,12 +1,18 @@
-const login = async ()=> {
-    
-document.replace('/login');
-     
-}
-const signUp = async ()=>{
+// const login = async ()=> {
+ 
+//     const res = await fetch('/', {
+//         method: 'GET'
 
-document.replace('/signup');
+//     })
+// if(res.ok){
+// document.location.replace('/login');
+// }
+// }
+// const signUp = async ()=> {
 
-}
-document.querySelector('#login').addEventListener('click',login);
-document.querySelector('#signUp').addEventListener('click',signUp);
+
+// document.location.replace('/sign_up');
+
+// }
+// document.querySelector('#login').addEventListener('click',login);
+// document.querySelector('#signUp').addEventListener('click',signUp);
