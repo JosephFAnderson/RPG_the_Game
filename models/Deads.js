@@ -44,7 +44,7 @@ Deads.init(
             }
         },
         monster_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
             references: {
                 model: "monsters",
@@ -66,8 +66,7 @@ Deads.init(
         freezeTableName: true,
         underscored: true,
         modelName: "deads"
-      }
-
+    }
 );
 
 module.exports = Deads;
