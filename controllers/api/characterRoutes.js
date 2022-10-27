@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Character, User } = require('../../models');
 const withAuth = require("../../utils/auth");
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     req.body.user_id = req.session.user_id;
     try {
         const newChar = await Character.create(
@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
 });
 
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     req.body.user_id = req.session.user_id;
 
     Character.update(
@@ -33,7 +33,7 @@ router.put('/:id', async (req, res) => {
         .catch((err) => res.json(err))
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const deleteChar = await Character.destroy({
             where: {
