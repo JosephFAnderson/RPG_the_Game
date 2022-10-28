@@ -2,8 +2,8 @@ const arena = async () => {
     document.location.replace('/arena')
 }
 
-const shop = async (event) => {
-    document.location.replace(`/shop/${event.target.dataset.id}`)
+const shop = async () => {
+    document.location.replace(`/shop/${shopBtn.dataset.id}`)
 }
 
 const adventure = async () => {
