@@ -1,5 +1,5 @@
 const arena = async () => {
-    document.location.replace('/arena')
+    document.location.replace(`/arena/${arenaBtn.dataset.id}`)
 }
 
 const shop = async () => {
@@ -7,7 +7,7 @@ const shop = async () => {
 }
 
 const adventure = async () => {
-    document.location.replace('/adventure')
+    document.location.replace(`/adventure/${adventureBtn.dataset.id}`)
 }
 
 const inventory = async () => {

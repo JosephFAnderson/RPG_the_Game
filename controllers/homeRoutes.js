@@ -47,12 +47,8 @@ router.get('/characterCreation', withAuth, async (req, res) => {
 
 router.get('/town/:id', withAuth, async (req, res) => {
     try{
-        const charData = await Character.findByPk(1).catch((err) => res.json(err));
-        const character = charData.get({plain: true});
-        req.session.save( () => {
-            req.session.character_id = character.id;
-            console.log(req.session.character_id)
-        });
+        const charData = await Character.findByPk(req.params.id).catch((err) => res.json(err));
+        const character = charData.get({plain: true});        
         res.render('town', {character});
     }catch (err) {
         res.status(500).json(err);
@@ -89,7 +85,7 @@ router.get('/graveyard', withAuth, async (req, res) => {
     }
 });
 
-router.get('/adventure', withAuth, async (req, res) => {
+router.get('/adventure/:id', withAuth, async (req, res) => {
     try{
         res.render('adventure');
     }catch (err) {
