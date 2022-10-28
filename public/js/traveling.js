@@ -19,3 +19,10 @@ anime({
     easing: 'linear',
     duration: 7000
 });
+
+const transitionToCombat = async () => {
+    const combatData = document.querySelector('#combatData');
+    setTimeout(function(){ document.location.replace(`/combatScreen?id=${combatData.dataset.id}&monId=${combatData.dataset.monid}`); }, 8500);
+};
+
+window.addEventListener('load', transitionToCombat)
