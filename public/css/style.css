@@ -1,3 +1,4 @@
+/* Home Screen CSS */
 body{
     height: 100vh;
     margin: 0;
@@ -167,6 +168,7 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 0;
 }
 
+
 .bigContainer {
     display: grid;
     justify-content: center;
@@ -200,3 +202,113 @@ input[type=number]::-webkit-outer-spin-button {
     top: -28px;
     left: -20px;
 }
+
+/* Combat Screen CSS */
+.combat-bg{
+    place-items: center;
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url("/images/woods.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    animation: zoom-in-zoom-out 55s infinite alternate linear;
+
+}
+.player-screen{
+    display: flexbox;
+    width: 600px;
+    height: 750px;
+    padding: 20px;
+    border: 8px solid black;
+    background:rgba(0,0,0,0);
+    top: 5%;  
+    left: 3%;
+    position: absolute;
+
+}
+.name{
+    font-family: titleFont;
+    align-items: center;     
+    align-content: center;
+    position: absolute;
+    left: 35%;
+}
+.player-img{
+    display: inline-flexbox;
+}
+.monster-screen{
+    display: flexbox;
+    width: 600px;
+    height: 750px;
+    padding: 20px;
+    border: 8px solid black;
+    background: rgba(0,0,0,0);
+    top: 5%;  
+    bottom: 65%;
+    left: 60%;
+    position: relative;
+}
+.player-Btn{
+    position:absolute;
+    bottom:5%;
+    width:100%;
+    left:10%;
+}
+#attackBtn{
+    font-family: titleFont;
+    font-size: 45px;
+    appearance: none;
+    background-image: url("/images/sword.png");
+    background-color: rgba(0,0,0,0);
+    background-position: center;
+    background-size: cover;
+    color: red;
+    width: 250px;
+    height: 100px;
+   
+}
+#fleeBtn{
+    font-family: titleFont;
+    font-size: 45px;
+    appearance: none;
+    background-image: url("/images/boot.png");
+    background-color: rgba(0,0,0,0);
+    background-position: center;
+    background-size: cover;
+    color: beige;
+    width: 250px;
+    height: 100px;
+}
+.img-ref{
+    position: absolute;
+    bottom: 0;
+    width: 10%;
+    height: .5rem;
+    font-size: xx-small;
+
+
+}
+#combatLog{
+    font-family: titleFont;
+    position: absolute;
+    top: 90%;
+
+
+}
+@keyframes zoom-in-zoom-out {
+    0% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1.5, 1.5);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }
+
