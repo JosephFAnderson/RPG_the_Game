@@ -22,8 +22,6 @@ anime({
 
 const transitionToCombat = async () => {
     const combatData = document.querySelector('#combatData');
-    console.log(combatData.dataset.id);
-    console.log(combatData.dataset.monid);
     setTimeout(function(){ document.location.replace(`/combatScreen?id=${combatData.dataset.id}&monId=${combatData.dataset.monid}`); }, 8500);
 };
 
