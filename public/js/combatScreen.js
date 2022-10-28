@@ -38,8 +38,10 @@ const attack = () => {
             monster.health -= damageTaken;
             if(monster.health < 1){
                 console.log(`${monster.name} has fallen\n`)
+                return;
             }else{
                 console.log(`${monster.name} has ${monster.health} health left\n`)
+                
             }
        
         } else{
@@ -54,8 +56,10 @@ const attack = () => {
             character.health -= damageTaken;
             if(character.health < 1){
                 console.log(`${character.name} has fallen\n`)
+                return;
             }else{
                 console.log(`${character.name} has ${character.health} health left\n`)
+                
             }
             
         }
