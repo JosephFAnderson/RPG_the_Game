@@ -92,13 +92,16 @@ router.get('/adventure/:id', withAuth, async (req, res) => {
         res.status(500).json(err);
     }    
 });
-router.get('/combatScreen/:id',  async (req,res) => {
-    
+router.get('/combatScreen/',  async (req,res) => {    
     try{
-        const charData = await Character.findByPk(req.params.id);
+        const charData = await Character.findByPk(req.query.id);
         const character = charData.get({plain:true});
+        const monData = await Monster.findAll();
+        const monsters = monData.map(monster => monster.get({ plain: true }));
+        const monsterPossible = monsters.filter(mon => mon.id == 1 || mon.id == 2);
+        const monster = monsterPossible[Math.floor(Math.random() * monsterPossible.length)]
 
-        res.render('combatScreen', {character});
+        res.render('combatScreen', {character, monster});
     }catch(err){
         res.status(500).json(err);
 }    

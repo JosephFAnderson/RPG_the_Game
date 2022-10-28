@@ -13,3 +13,6 @@
 
 // }
 
+const getChar = async () => {
+    const character = fetch()
+}

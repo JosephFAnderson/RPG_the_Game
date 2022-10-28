@@ -2,6 +2,11 @@ const router = require('express').Router();
 const { Character } = require('../../models');
 const withAuth = require("../../utils/auth");
 
+
+router.get('/:id'), withAuth, async (req, res) => {
+
+};
+
 router.post('/', withAuth, async (req, res) => {
     req.body.user_id = req.session.user_id;
     try {
@@ -16,7 +21,6 @@ router.post('/', withAuth, async (req, res) => {
         res.status(500).json(err)
     }
 });
-
 
 router.put('/:id', withAuth, async (req, res) => {
 
