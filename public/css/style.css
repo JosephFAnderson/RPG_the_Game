@@ -140,6 +140,37 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0 auto;
 }
 
+.motion-path{
+    position: relative;
+}
+
+#leafPath{
+    position: absolute;
+    left: 200px;
+    top: 400px;
+}
+
+#leaf{
+    width: 50px;
+    position: absolute;
+    left: 200px;
+    top: 375px;
+}
+
+#leaf2{
+    width: 50px;
+    position: absolute;
+    left: 400px;
+    top: 375px;
+}
+
+#leaf3{
+    width: 50px;
+    position: absolute;
+    left: 150px;
+    top: 350px;
+}
+
 .coffin img{
     width: 100px;
     height: 100px;
