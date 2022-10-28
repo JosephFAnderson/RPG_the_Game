@@ -1,0 +1,37 @@
+<section class="combat-bg"></section>
+
+<div class="player-screen">
+    <div class="name">{{character.name}}</div>
+    <div class="player-img">
+        <img id="playerImg" src="{{character.image_url}}"></img>
+    </div>
+
+    <div class="player-HP">
+    <div id="phpBar" style="width: 100%; transform: translateX:({{character.vitality}})"></div>
+    </div>
+    
+    <div class="player-Btn">
+        <button id="attackBtn">Attack</button>
+        <button id="fleeBtn">Flee</button>
+    </div>
+
+</div>
+
+<div class="monster-screen">
+    <div class="name">{{monster.name}}</div>
+<div id="monsterImg">
+        <img id="monsterImg" src="{{monster.image_url}}"></img>
+    </div>
+    <div id="monsterHP">
+    <div id="mhpBar" style="width: 100%; transform: translateX:({{monster.vitality}})"></div>
+    </div>
+    <div id="combatLog">Wow what a hit!</div>
+</div>
+
+
+<script src="anime.min.js"></script>
+
+<footer>
+
+ <p class="img-ref">Image by brgfx on Freepik</p> 
+</footer>
