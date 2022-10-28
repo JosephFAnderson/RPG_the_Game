@@ -1,34 +1,34 @@
 <section id="adventureChoices">
     <section>
         <div class="grow">
-            <img class="adventureImage" src="/images/starter.jpg">
+            <img onclick="document.location.replace('/traveling');" class="adventureImage" src="/images/starter.jpg">
         </div>
         <p class="monLv">Monsters lv 1-2</p>
     </section>
     <section>
         <div class="grow">
-            <img class="adventureImage" src="/images/forest.jpg">
+            <img onclick="document.location.replace('/traveling');" class="adventureImage" src="/images/forest.jpg">
         </div>
         <p class="monLv">Monsters lv 3-4</p>
     </section>
     <section>
         <div class="grow">
-            <img class="adventureImage" src="/images/mountains.jpg">
+            <img onclick="document.location.replace('/traveling');" class="adventureImage" src="/images/mountains.jpg">
         </div>
         <p class="monLv">Monsters lv 5-6</p>
     </section>
     <section>
         <div class="grow">
-            <img class="adventureImage" src="/images/river.jpg">
+            <img onclick="document.location.replace('/traveling');" class="adventureImage" src="/images/river.jpg">
         </div>
         <p class="monLv">Monsters lv 7-8</p>
     </section>
     <section>
         <div class="grow">
-            <img class="adventureImage" src="/images/volcano.jpg">
+            <img onclick="document.location.replace('/traveling');" class="adventureImage" src="/images/volcano.jpg">
         </div>
         <p class="monLv">Monsters lv 9-10</p>
     </section>
 </section>
-<button id="return">Return To Town</button>
+<button data-id="{{character_id}}" id="return">Return To Town</button>
 <script src="/js/adventure.js"></script>
