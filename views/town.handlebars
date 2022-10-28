@@ -1,26 +1,28 @@
-<section>
-    <div>
-        <img src="https://i.pinimg.com/564x/b2/35/ce/b235ce7cc566bb1da76ad2c7e49e603d.jpg" alt="arena">
-        <button data-id="{{character.id}}" id="arenaBtn">Arena</button>
-    </div>
-    <div>
-        <img src="https://i.pinimg.com/originals/a5/cd/2c/a5cd2cc8f3eb82aeca033ce9b440d6da.jpg" alt="merchant">
-        <button data-id="{{character.id}}" id="shopBtn">Shop</button>
-    </div>
-    <div>
-        <img src="https://i.pinimg.com/564x/f0/6f/97/f06f97b0c239c591c355b3c95e7e9938.jpg" alt="forest">
-        <button data-id="{{character.id}} "id="adventureBtn">Adventure</button>
-    </div>
-</section>
-<section>
-    <div>
-        <h3>Gold: {{character.gold}}</h3>
-    </div>
-    <div>
-        <button id="inventoryBtn">Inventory</button>
-    </div>
-    <div>
-        <h3>Stats: </h3>
-    </div>
+<section class="townContainer">
+    <section class="menuContainer">
+        <div class="smallContainer">
+            <img class="townHover" id="arenaBtn" data-id="{{character.id}}" src="/images/wepik-photo-mode-2022928-122142.png" alt="arena">
+            <p class="townText">Arena</p>
+        </div>
+        <div class="smallContainer">
+            <img class="townHover" id="shopBtn" data-id="{{character.id}}" src="/images/merchant.png" alt="merchant">
+            <p class="townText">Shop</p>
+        </div>
+        <div class="smallContainer">
+            <img class="townHover" id="adventureBtn" data-id="{{character.id}}" src="/images/wepik-photo-mode-2022928-121641.png" alt="forest">
+            <p class="townText">Adventure</p>
+        </div>
+    </section>
+    <section class="townFooter">
+        <div>
+            <h3>Gold: {{character.gold}}</h3>
+        </div>
+        <div>
+            <button id="inventoryBtn">Inventory</button>
+        </div>
+        <div>
+            <h3>Stats: </h3>
+        </div>
+    </section>
 </section>
 <script src="/js/town.js"></script>
