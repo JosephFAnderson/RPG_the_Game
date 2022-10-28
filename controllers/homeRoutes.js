@@ -87,7 +87,7 @@ router.get('/graveyard', withAuth, async (req, res) => {
 
 router.get('/adventure/:id', withAuth, async (req, res) => {
     try{
-        res.render('adventure');
+        res.render('adventure', {character_id: req.params.id});
     }catch (err) {
         res.status(500).json(err);
     }    
