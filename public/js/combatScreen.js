@@ -12,7 +12,14 @@
 
 
 // }
+// const charEl = document.querySelector("#player");
+// const monEl = document.querySelector("#monster");
 
-const getChar = async () => {
-    const character = fetch()
-}
+// const getChar = async () => {
+//     const character = await fetch(`/api/character/${charEl.dataset.id}`).then(res => res.json()).then(data => data);
+//     console.log(character);
+//     // const monster = await fetch(`/api/monster/${monEl.dataset.id}`).then(res => res.json()).then(data => data)
+//     // console.log(monster);
+// }
+
+// getChar();

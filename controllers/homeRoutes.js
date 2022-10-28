@@ -97,11 +97,12 @@ router.get('/combatScreen/',  async (req,res) => {
         const charData = await Character.findByPk(req.query.id);
         const character = charData.get({plain:true});
         const monData = await Monster.findAll();
-        const monsters = monData.map(monster => monster.get({ plain: true }));
-        const monsterPossible = monsters.filter(mon => mon.id == 1 || mon.id == 2);
-        const monster = monsterPossible[Math.floor(Math.random() * monsterPossible.length)]
+        console.log(monData);
+        // const monsters = monData.map(monster => monster.get({ plain: true }));
+        // const monsterPossible = monsters.filter(mon => mon.id == req.query.monId);
+        // const monster = monsterPossible[Math.floor(Math.random() * monsterPossible.length)]
 
-        res.render('combatScreen', {character, monster});
+        res.render('combatScreen', {character});
     }catch(err){
         res.status(500).json(err);
 }    

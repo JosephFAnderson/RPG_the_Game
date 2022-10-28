@@ -1,6 +1,6 @@
 <section class="combat-bg"></section>
 
-<div data-id="{{character.id}}" class="player-screen">
+<div id="player" data-id="{{character.id}}" class="player-screen">
     <div class="name">{{character.name}}</div>
     <div class="player-img">
         <img id="playerImg" src="{{character.image_url}}"></img>
@@ -17,7 +17,7 @@
 
 </div>
 
-<div data-id="{{monster.id}}" class="monster-screen">
+<div id="monster" data-id="{{monster.id}}" class="monster-screen">
     <div class="name">{{monster.name}}</div>
     <div id="monsterImg">
         <img id="monsterImg" src="{{monster.monster_url}}"></img>
@@ -29,9 +29,9 @@
 </div>
 
 
-<script src="anime.min.js"></script>
+
 
 <footer>
-
  <p class="img-ref">Image by brgfx on Freepik</p> 
 </footer>
+<script src="/js/combatScreen.js"></script>
