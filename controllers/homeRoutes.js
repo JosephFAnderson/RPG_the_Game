@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {User, Character, Armor, Weapon, Dead} = require('../models');
+const {User, Character, Armor, Weapon, Dead, Monster} = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -95,6 +95,17 @@ router.get('/adventure', withAuth, async (req, res) => {
     }catch (err) {
         res.status(500).json(err);
     }    
+});
+router.get('/combatScreen/:id',  async (req,res) => {
+    
+    try{
+        const charData = await Character.findByPk(req.params.id);
+        const character = charData.get({plain:true});
+
+        res.render('combatScreen', {character});
+    }catch(err){
+        res.status(500).json(err);
+}    
 });
 
 module.exports = router;
