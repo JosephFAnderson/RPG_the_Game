@@ -18,3 +18,8 @@ const activate = (event) => {
 
 const charContainer = document.querySelector('#charContainer');
 charContainer.addEventListener('click', activate)
+
+const returnBtn = document.querySelector('#returnTown');
+returnBtn.addEventListener('click', (event) =>{
+    document.location.replace(`/town/${event.target.dataset.id}`)
+});

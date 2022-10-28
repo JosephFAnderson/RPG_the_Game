@@ -372,3 +372,61 @@ input[type=number]::-webkit-outer-spin-button {
     }
   }
 
+.townContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/images/forrest-white-2.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: sepia(30%) saturate(100%) brightness(100%) hue-rotate(330deg);
+}
+
+.menuContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: none;
+}
+
+.smallContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    flex-wrap: wrap;
+}
+
+.smallContainer .townText {
+    color: white;
+    position: relative;
+    bottom: 20px;
+    text-align: center;
+    visibility: hidden;
+}
+
+.smallContainer img {
+    width: 50%;
+    height: 50%;
+}
+.smallContainer img:hover {
+    transition: 0.5s;
+    transition-timing-function: ease-in-out;
+    width: 80%;
+    height: 80%;
+    cursor: pointer;
+}
+.smallContainer img:hover .townText {
+    visibility: visible;
+}
+
+.townFooter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 245, 227, 0.685);
+}

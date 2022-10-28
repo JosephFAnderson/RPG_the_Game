@@ -92,7 +92,7 @@ router.get('/adventure/:id', withAuth, async (req, res) => {
         res.status(500).json(err);
     }    
 });
-router.get('/combatScreen/',  async (req,res) => {    
+router.get('/combatScreen/', withAuth, async (req,res) => {    
     try{
         const charData = await Character.findByPk(req.query.id);
         const character = charData.get({plain:true});
@@ -113,7 +113,7 @@ router.get('/arena/:id', withAuth, async (req, res) => {
         const charData = await Character.findAll()
         const characters = charData.map(character => character.get({ plain: true }));
         const opponents = characters.filter(character => character.user_id !== req.session.user_id);
-        res.render('arena', { opponents, char_id: req.params.id });
+        res.render('arena', { opponents, character_id: req.params.id });
     }catch (err) {
         res.status(500).json(err);
     }
@@ -125,6 +125,6 @@ router.get('/traveling', withAuth, async (req, res) => {
     }catch (err) {
         res.status(500).json(err);
     }   
-})
+});
 
 module.exports = router;
