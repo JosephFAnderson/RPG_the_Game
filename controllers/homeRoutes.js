@@ -120,7 +120,7 @@ router.get('/arena/:id', withAuth, async (req, res) => {
 
 router.get('/traveling', withAuth, async (req, res) => {
     try{
-        res.render('traveling');
+        res.render('traveling', {character_id: req.query.id, monster_id: req.query.monId});
     }catch (err) {
         res.status(500).json(err);
     }   
