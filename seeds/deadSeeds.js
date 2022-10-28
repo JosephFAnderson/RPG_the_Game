@@ -31,6 +31,6 @@ const deadsData = [
     },
 ]
 
-const seedDeads = () => Deads.bulkCreate(deadsData);
+const seedDeads = () => Dead.bulkCreate(deadsData);
 
 module.exports = seedDeads;

@@ -119,6 +119,65 @@ input[type=number]::-webkit-outer-spin-button {
     align-self: center;
 }
 
+.deads{
+    height: 100vh;
+    background-image: url('/images/graveyard.png');
+    background-size: cover;
+}
+
+.deads h3{
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+
+.coffin{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-color: #53505070;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.motion-path{
+    position: relative;
+}
+
+#leafPath{
+    position: absolute;
+    left: 200px;
+    top: 400px;
+}
+
+#leaf{
+    width: 50px;
+    position: absolute;
+    left: 200px;
+    top: 375px;
+}
+
+#leaf2{
+    width: 50px;
+    position: absolute;
+    left: 400px;
+    top: 375px;
+}
+
+#leaf3{
+    width: 50px;
+    position: absolute;
+    left: 150px;
+    top: 350px;
+}
+
+.coffin img{
+    width: 100px;
+    height: 100px;
+
+}
+
 @keyframes pan {
     100% { background-position: 40% 60%;}
 }
