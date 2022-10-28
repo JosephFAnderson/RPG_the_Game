@@ -166,3 +166,37 @@ input[type=number]::-webkit-outer-spin-button {
     cursor: pointer;
     padding: 0;
 }
+
+.bigContainer {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.travelPage {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.travelingPath {
+    position: relative;
+}
+
+.characterPiece {
+    font-size: 50px;
+    position: absolute;
+    top: -28px;
+    left: -20px;
+}
+
+.travelingPath2 {
+    position: relative;
+}
+
+.characterPiece2 {
+    font-size: 50px;
+    position: absolute;
+    top: -28px;
+    left: -20px;
+}
