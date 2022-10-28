@@ -85,7 +85,7 @@ router.get('/graveyard', withAuth, async (req, res) => {
     }
 });
 
-router.get('/adventure', withAuth, async (req, res) => {
+router.get('/adventure/:id', withAuth, async (req, res) => {
     try{
         res.render('adventure');
     }catch (err) {
