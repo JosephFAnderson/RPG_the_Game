@@ -1,18 +1,35 @@
-// const login = async ()=> {
- 
-//     const res = await fetch('/', {
-//         method: 'GET'
+var textWrapper = document.querySelector('.title');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-//     })
-// if(res.ok){
-// document.location.replace('/login');
-// }
-// }
-// const signUp = async ()=> {
+anime.timeline({loop: false})
+  .add({
+    targets: '.title .letter',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 4000,
+    delay: (el, i) => 150 * (i+1)
+  });
 
+var logWrapper = document.querySelector('.loginText');
+logWrapper.innerHTML = logWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-// document.location.replace('/sign_up');
+anime.timeline({loop: false})
+.add({
+  targets: '.loginText .letter',
+  opacity: [0,1],
+  easing: "easeInOutQuad",
+  duration: 3000,
+  delay: (el, i) => 300 * (i+1)
+});
 
-// }
-// document.querySelector('#login').addEventListener('click',login);
-// document.querySelector('#signUp').addEventListener('click',signUp);
+var signWrapper = document.querySelector('.signText');
+signWrapper.innerHTML = signWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: false})
+.add({
+  targets: '.signText .letter',
+  opacity: [0,1],
+  easing: "easeInOutQuad",
+  duration: 3000,
+  delay: (el, i) => 500 * (i+1)
+});
