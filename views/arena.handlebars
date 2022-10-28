@@ -1,0 +1,19 @@
+<section class="characterList">
+    <h3>Characters</h3>
+        <section id="charContainer">
+        {{#each opponents as |opponent| }}
+            <div class="character" data-id="{{opponent.id}}">
+                <img data-id="{{opponent.id}}" src="{{image_url}}" alt="{{name}}">
+                <div class="charStats" data-id="{{opponent.id}}">
+                    <h4 data-id="{{opponent.id}}">{{name}}</h4>
+                    <p data-id="{{opponent.id}}">Lv: {{level}}</p>
+                    <p data-id="{{opponent.id}}">Str: {{strength}}</p>
+                    <p data-id="{{opponent.id}}">Def: {{defense}}</p>
+                    <p data-id="{{opponent.id}}">Vit: {{vitality}}</p>
+                </div>
+            </div>
+        {{/each}}
+        </section>
+    <button data-id="{{char_id}}"id="selectOpp">Select Opponent</button>    
+</section>
+<script src="/js/arena.js"></script>
