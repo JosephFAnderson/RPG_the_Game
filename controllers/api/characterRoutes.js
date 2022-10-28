@@ -1,6 +1,18 @@
 const router = require('express').Router();
-const { Character } = require('../../models');
+const { Character, Weapon, Armor} = require('../../models');
 const withAuth = require("../../utils/auth");
+
+
+router.get('/:id', async (req, res) => {
+    try{
+        const characters = await Character.findByPk(req.params.id, {
+            include: [Weapon, Armor]
+        });
+        res.status(200).json(characters);
+    }catch (err) {
+        res.status(500).json(err);
+    }    
+});
 
 router.post('/', withAuth, async (req, res) => {
     req.body.user_id = req.session.user_id;
@@ -16,7 +28,6 @@ router.post('/', withAuth, async (req, res) => {
         res.status(500).json(err)
     }
 });
-
 
 router.put('/:id', withAuth, async (req, res) => {
 
