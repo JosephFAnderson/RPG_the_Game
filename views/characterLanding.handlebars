@@ -1,5 +1,12 @@
 <section class="characterList">
     <h3>Characters</h3>
+    <div class="card">
+        <img src="{{image_url}}
+        <h3>Hover Me</h3>
+        <div class="focus-content">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet quia fugit labore dolores sint reiciendis perspiciatis<br/>
+        </div>
+    </div>
         <section id="charContainer">
         {{#each characters as |character| }}
             <div class="character" data-id="{{character.id}}">
@@ -20,4 +27,10 @@
     <button id="visitGrav">Visit Graveyard</button>
     <button id="logOut">Log Out</button>
 </section>
+<div class="video-container2">
+        <video autoplay loop muted>
+            <source src="images\HD0360.mp4" type="video/mp4">
+        </video>
+            
+    </div>
 <script src="/js/characterLanding.js"></script>
