@@ -41,8 +41,17 @@ const createBtn = document.querySelector('#createBtn');
 createBtn.addEventListener('click', creation);
 
 const leavegame = document.querySelector('#logOut');
-leavegame.addEventListener('click', () => {
-    document.location.replace('/');
+leavegame.addEventListener('click', async () => {
+    const res = await fetch('/api/user/logout', {
+        method: 'POST'
+    });
+    if (res.ok) {
+        document.location.replace('/');
+    }
+    else {
+        alert( await res.json())
+    }
+    
 });
 
 const gotograve = document.querySelector('#visitGrav');
