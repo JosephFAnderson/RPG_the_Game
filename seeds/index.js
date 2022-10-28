@@ -10,15 +10,18 @@ const seedAll = async () => {
     await sequelize.sync({force: true});
     console.log('\n---- DATABASE SYNCED ----\n');
     await seedUser();
-    console.log('\n---- USER SEEDED ----\n');
-    await seedCharacter();
-    console.log('\n---- CHARACTER SEEDED ----\n');
+    console.log('\n---- USERS SEEDED ----\n');
     await seedWeapon();
-    console.log('\n---- WEAPON SEEDED ----\n');
+    console.log('\n---- WEAPONS SEEDED ----\n');
     await seedArmor();
-    console.log('\n---- Armor SEEDED ----\n');
+    console.log('\n---- ARMORS SEEDED ----\n');
+    await seedCharacter();    
+    console.log('\n---- CHARACTERS SEEDED ----\n');  
+    await seedMonsters();
+    console.log('\n---- MONSTERS SEEDED ----\n');  
     await seedDeads();
-    console.log('\n---- Dead SEEDED ----\n');
+    console.log('\n---- DeadS SEEDED ----\n');
+
     process.exit(0);
 }
 

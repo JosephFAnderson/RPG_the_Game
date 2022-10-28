@@ -76,6 +76,7 @@ input[type=number]::-webkit-outer-spin-button {
     -ms-transform: scale(1.2);
     transform: scale(1.2);
     transition: 1s ease;
+    cursor: pointer;
 }
 
 .monLv{
@@ -117,6 +118,65 @@ input[type=number]::-webkit-outer-spin-button {
 
 .kill{
     align-self: center;
+}
+
+.deads{
+    height: 100vh;
+    background-image: url('/images/graveyard.png');
+    background-size: cover;
+}
+
+.deads h3{
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+
+.coffin{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-color: #53505070;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.motion-path{
+    position: relative;
+}
+
+#leafPath{
+    position: absolute;
+    left: 200px;
+    top: 400px;
+}
+
+#leaf{
+    width: 50px;
+    position: absolute;
+    left: 200px;
+    top: 375px;
+}
+
+#leaf2{
+    width: 50px;
+    position: absolute;
+    left: 400px;
+    top: 375px;
+}
+
+#leaf3{
+    width: 50px;
+    position: absolute;
+    left: 150px;
+    top: 350px;
+}
+
+.coffin img{
+    width: 100px;
+    height: 100px;
+
 }
 
 @keyframes pan {
@@ -311,6 +371,65 @@ input[type=number]::-webkit-outer-spin-button {
       transform: scale(1, 1);
     }
   }
+
+.townContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/images/forrest-white-2.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: sepia(30%) saturate(100%) brightness(100%) hue-rotate(330deg);
+}
+
+.menuContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: none;
+}
+
+.smallContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    flex-wrap: wrap;
+}
+
+.smallContainer .townText {
+    color: white;
+    position: relative;
+    bottom: 20px;
+    text-align: center;
+    visibility: hidden;
+}
+
+.smallContainer img {
+    width: 50%;
+    height: 50%;
+}
+.smallContainer img:hover {
+    transition: 0.5s;
+    transition-timing-function: ease-in-out;
+    width: 80%;
+    height: 80%;
+    cursor: pointer;
+}
+.smallContainer img:hover .townText {
+    visibility: visible;
+}
+
+.townFooter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 245, 227, 0.685);
+}
 
 /* login page CSS */
 .section {

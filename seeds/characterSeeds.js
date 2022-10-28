@@ -11,6 +11,8 @@ const characterData = [
         gold: 1000,
         battles_won: 1,
         user_id: 1,
+        weapon_id: 2,
+        armor_id: 1
     },
     {
         name: "Hunter",
@@ -22,6 +24,8 @@ const characterData = [
         gold: 500,
         battles_won: 2,
         user_id: 2,
+        weapon_id: 1,
+        armor_id: 3
     },
     {
         name: "Diego",
@@ -32,6 +36,8 @@ const characterData = [
         gold: 250,
         battles_won: 15,
         user_id: 3,
+        weapon_id: 3,
+        armor_id: 1
     },
     {
         name: 'Joseph',
@@ -42,6 +48,8 @@ const characterData = [
         gold: 250,
         battles_won: 0,
         user_id: 1,
+        weapon_id: 2,
+        armor_id: 3
     }    
 ]
 

@@ -87,12 +87,13 @@ router.get('/graveyard', withAuth, async (req, res) => {
 
 router.get('/adventure/:id', withAuth, async (req, res) => {
     try{
-        res.render('adventure');
+        res.render('adventure', {character_id: req.params.id});
     }catch (err) {
         res.status(500).json(err);
     }    
 });
-router.get('/combatScreen/:id',  async (req,res) => {
+
+router.get('/combatScreen/:id', withAuth,  async (req,res) => {
     
     try{
         const charData = await Character.findByPk(req.params.id);
@@ -109,7 +110,7 @@ router.get('/arena/:id', withAuth, async (req, res) => {
         const charData = await Character.findAll()
         const characters = charData.map(character => character.get({ plain: true }));
         const opponents = characters.filter(character => character.user_id !== req.session.user_id);
-        res.render('arena', { opponents, char_id: req.params.id });
+        res.render('arena', { opponents, character_id: req.params.id });
     }catch (err) {
         res.status(500).json(err);
     }
@@ -121,6 +122,6 @@ router.get('/traveling', withAuth, async (req, res) => {
     }catch (err) {
         res.status(500).json(err);
     }   
-})
+});
 
 module.exports = router;

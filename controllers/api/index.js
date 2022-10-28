@@ -5,4 +5,6 @@ const charRoutes = require('./characterRoutes');
 router.use('/user', userRoutes);
 router.use('/character',charRoutes);
 
+
+
 module.exports = router;
