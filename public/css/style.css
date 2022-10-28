@@ -79,3 +79,35 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0 auto;
     display: block;
 }
+
+.characterList{
+    text-align: center;
+}
+
+.character{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+    margin: 2px auto;
+}
+
+#charContainer{
+    width: 50%;
+    margin: auto;
+}
+
+.active, .character:hover {
+    background-color: rgba(76, 129, 190, 0.281);
+  }
+
+.charStats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.kill{
+    align-self: center;
+}

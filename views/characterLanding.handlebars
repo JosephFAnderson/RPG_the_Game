@@ -1,18 +1,20 @@
 <section class="characterList">
     <h3>Characters</h3>
+        <section id="charContainer">
         {{#each characters as |character| }}
-            <div data-id="{{character.id}}">
+            <div class="character" data-id="{{character.id}}">
                 <img data-id="{{character.id}}" src="{{image_url}}" alt="{{name}}">
-                <div data-id="{{character.id}}">
+                <div class="charStats" data-id="{{character.id}}">
                     <h4 data-id="{{character.id}}">{{name}}</h4>
                     <p data-id="{{character.id}}">Lv: {{level}}</p>
                     <p data-id="{{character.id}}">Str: {{strength}}</p>
                     <p data-id="{{character.id}}">Def: {{defense}}</p>
                     <p data-id="{{character.id}}">Vit: {{vitality}}</p>
                 </div>
-                <button data-id="{{character.id}}" class="kill" onclick="kill(event);">X</button>
+                <button data-id="{{character.id}}" class="kill" onclick="kill(event);">Delete</button>
             </div>
         {{/each}}
+        </section>
     <button id="createBtn">Create New Character</button>
     <button id="selectChar">Select Character</button>
     <button id="visitGrav">Visit Graveyard</button>
