@@ -14,5 +14,5 @@ anime({
   rotate: path('angle'),
   easing: 'linear',
   duration: 15000,
-  loop: true
+  loop: true,
 });
