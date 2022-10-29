@@ -70,8 +70,6 @@ const attack = () => {
 };
 
 const victory = () => {
-    console.log(character.gold)
-    console.log(character.experience);
     character.gold += monster.gold_drop;
     character.experience += monster.exp_worth;
     const cLog = document.querySelector('#combatLog');
@@ -116,10 +114,6 @@ const getReady = async () => {
 
     const order = Math.floor(Math.random() * 2)
     order === 1 ? initative.push(monster) : initative.unshift(monster);
-
-    console.log(character);
-    console.log(monster);
-    console.log(initative);
 }
 
 const flee = () => {
