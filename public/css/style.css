@@ -280,46 +280,63 @@ input[type=number]::-webkit-outer-spin-button {
     animation: zoom-in-zoom-out 55s infinite alternate linear;
 
 }
+
+#battlefield{
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
 .player-screen{
-    display: flexbox;
+    display: flex;
+    flex-direction: column;
     width: 600px;
-    height: 750px;
-    padding: 20px;
+    height: 600px;
     border: 8px solid black;
     background:rgba(0,0,0,0);
-    top: 5%;  
-    left: 3%;
-    position: absolute;
+    /* top: 5%;  
+    left: 3%;*/
+    
+    align-items: center;
 
 }
+
+#player{
+    display: flex;
+    flex-direction: column; 
+    position: relative;
+}
+
 .name{
-    font-family: titleFont;
-    align-items: center;     
-    align-content: center;
-    position: absolute;
-    left: 35%;
+    font-family: titleFont;    
 }
-.player-img{
-    display: inline-flexbox;
+
+#monster{
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
+
 .monster-screen{
-    display: flexbox;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 600px;
-    height: 750px;
-    padding: 20px;
+    height: 600px;
     border: 8px solid black;
     background: rgba(0,0,0,0);
-    top: 5%;  
-    bottom: 65%;
-    left: 60%;
     position: relative;
 }
 .player-Btn{
-    position:absolute;
-    bottom:5%;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
     width:100%;
-    left:10%;
+    
 }
+
 #attackBtn{
     font-family: titleFont;
     font-size: 45px;
@@ -355,12 +372,16 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 #combatLog{
-    font-family: titleFont;
-    position: absolute;
-    top: 90%;
-
-
+    background-color: #aaaaaa;
+    width: 100%;
+    height: 125px;
+    margin-top: 10px;
+    line-height: 1;
+    text-align: center;
+    font-size: 1.25em;
+    border: 2px black solid;
 }
+
 @keyframes zoom-in-zoom-out {
     0% {
       transform: scale(1, 1);
