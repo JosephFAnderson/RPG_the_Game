@@ -47,7 +47,7 @@ router.get('/characterCreation', withAuth, async (req, res) => {
 
 router.get('/town/:id', withAuth, async (req, res) => {
     try{
-        const charData = await Character.findByPk(req.params.id).catch((err) => res.json(err));
+        const charData = await Character.findByPk(req.params.id, {include: [Armor, Weapon]}).catch((err) => res.json(err));
         const character = charData.get({plain: true});        
         res.render('town', {character});
     }catch (err) {

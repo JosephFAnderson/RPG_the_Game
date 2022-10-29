@@ -8,7 +8,7 @@ anime.timeline({loop: false})
     easing: "easeInOutQuad",
     duration: 4000,
     delay: (el, i) => 150 * (i+1)
-  });
+});
 
 var logWrapper = document.querySelector('.loginText');
 logWrapper.innerHTML = logWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
