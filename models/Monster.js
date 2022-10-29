@@ -39,6 +39,14 @@ Monster.init(
                 isNumeric: true
             }
         },
+        damage: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        level: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
         experience_given: {
             type: DataTypes.INTEGER,
             allowNull: false,

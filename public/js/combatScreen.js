@@ -134,7 +134,7 @@ const defeat = async () => {
 const getReady = async () => {
     character = await fetch(`/api/character/${charEl.dataset.id}`).then(res => res.json()).then(data => data);
     character.health = character.vitality*5;
-    
+    console.log(character);
     
     initative.push(character);
     
