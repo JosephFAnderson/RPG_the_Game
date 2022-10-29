@@ -3,7 +3,7 @@ const router = require('express').Router();
 
 router.get('/:id', async (req, res) => {
     try{        
-        const monData = Monster.findByPk(req.params.id);
+        const monData = await Monster.findByPk(req.params.id);
         res.status(200).json(monData);
     }catch (err) {
         res.status(500).json(err);
