@@ -95,9 +95,7 @@ const victory = async () => {
         setInterval( () => {
         document.location.replace(`/town/${character.id}`)
         }, 3000);
-    }else{
-        console.log(res.statusText);
-    }    
+    }   
 }
 
 const defeat = async () => {
