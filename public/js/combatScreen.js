@@ -24,47 +24,66 @@ const roll = (input) => {
 }
 
 const attack = () => {
+    
+    const cLog = document.querySelector('#combatLog');
+    cLog.innerHTML = "";
     for(let i = 0; i < 2; i++){
         if(initative[i].name === character.name){
             const damage = roll(`${character.weapon_damage}+${character.strength}`);
-            console.log(`${character.name} attacks ${monster.name} for ${damage}`);
+            cLog.innerHTML += `${character.name} attacks ${monster.name} for ${damage}<br>`;
             let damageTaken = damage - monster.defense;
             if(damageTaken < 0){
                 damageTaken = 0
             }
 
-            console.log(`${monster.name} takes ${damageTaken} after armor`);
+            cLog.innerHTML += `${monster.name} takes ${damageTaken} after armor<br>`;
 
             monster.health -= damageTaken;
             if(monster.health < 1){
-                console.log(`${monster.name} has fallen\n`)
+                victory();
                 return;
             }else{
-                console.log(`${monster.name} has ${monster.health} health left\n`)
+                cLog.innerHTML += `${monster.name} has ${monster.health} health left<br>`
                 
             }
        
         } else{
             const damage = monster.strength;
-            console.log(`${monster.name} attacks ${character.name} for ${damage}`);
+            cLog.innerHTML += `${monster.name} attacks ${character.name} for ${damage}<br>`;
             let damageTaken = damage - character.defense;
             if(damageTaken < 0){
                 damageTaken = 0
             }
 
-            console.log(`${character.name} takes ${damageTaken} after armor`);
+            cLog.innerHTML += `${character.name} takes ${damageTaken} after armor<br>`;
             character.health -= damageTaken;
             if(character.health < 1){
-                console.log(`${character.name} has fallen\n`)
+                defeat();
                 return;
             }else{
-                console.log(`${character.name} has ${character.health} health left\n`)
+                cLog.innerHTML += `${character.name} has ${character.health} health left<br>`
                 
             }
             
         }
     }
 };
+
+const victory = () => {
+    console.log(character.gold)
+    console.log(character.experience);
+    character.gold += monster.gold_drop;
+    character.experience += monster.exp_worth;
+    const cLog = document.querySelector('#combatLog');
+    cLog.innerHTML = ""
+    cLog.innerHTML = `CONGRATULATIONS! You defeated ${monster.name}.<br>You gained ${monster.gold_drop} gold and ${monster.exp_worth}xp.<br>You now have ${character.gold} gold and ${character.experience} xp!<br>`
+}
+
+const defeat = () => {
+    const cLog = document.querySelector('#combatLog');
+    cLog.innerHTML = ""
+    cLog.innerHTML = `DEFEATED! You have been slain by ${monster.name}.<br>`
+}
 
 const getReady = async () => {
     const charEl = document.querySelector("#player");
@@ -103,21 +122,29 @@ const getReady = async () => {
     console.log(initative);
 }
 
+const flee = () => {
+    const damage = monster.strength;
+    cLog.innerHTML += `${monster.name} attacks ${character.name} for ${damage}<br>`;
+    let damageTaken = damage - character.defense;
+    if(damageTaken < 0){
+        damageTaken = 0
+    }
+
+    cLog.innerHTML += `${character.name} takes ${damageTaken} after armor<br>`;
+    character.health -= damageTaken;
+    if(character.health < 1){
+        defeat();
+        return;
+    }else{
+                cLog.innerHTML += `${character.name} has ${character.health} health left<br>`
+                
+            }
+}
+
 getReady();
 
 const atkBtn = document.querySelector('#attackBtn');
 atkBtn.addEventListener('click', attack)
-// const atkBtn = document.querySelector('#attackBtn');
-// const fleeBtn= document.querySelector('#fleeBtn');
-// const monster = require('../Monster');
-// const character = require('../Character')
 
-
-// function flee(){
-//     document.location.replace('/town');
-// }
-// fleeBtn.addEventListener('click',flee());
-// function attack(){
-
-
-// }
+const fleeBtn = document.querySelector('#flee');
+fleeBtn.addEventListener('click', flee);

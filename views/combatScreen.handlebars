@@ -1,33 +1,38 @@
 <section class="combat-bg"></section>
 
-<div id="player" data-id="{{character.id}}" class="player-screen">
-    <div class="name">{{character.name}}</div>
-    <div class="player-img">
-        <img id="playerImg" src="{{character.image_url}}"></img>
-    </div>
+<div id="battlefield">
+    <div id="player" data-id="{{character.id}}">
+        <div class="player-screen">
+            <div class="name">{{character.name}}</div>
+            <div class="player-img">
+                <img width="600px" height="500px" id="playerImg" src="{{character.image_url}}"></img>
+            </div>
 
-    <div class="player-HP">
-    <div id="phpBar" style="width: 100%; transform: translateX:({{character.vitality}})"></div>
-    </div>
+            <div class="player-HP">
+            <div id="phpBar" style="width: 100%; transform: translateX:({{character.vitality}})"></div>
+            </div>
+        </div>
     
-    <div class="player-Btn">
-        <button id="attackBtn">Attack</button>
-        <button id="fleeBtn">Flee</button>
+        <div class="player-Btn">
+            <button id="attackBtn">Attack</button>
+            <button id="fleeBtn">Flee</button>
+        </div>
+
     </div>
 
+    <div id="monster" data-id="{{monster.id}}">
+            <div class="monster-screen">
+            <div class="name">{{monster.name}}</div>
+            <div id="monsterImg">
+                <img width="600px" height="500px" id="monsterImg" src="{{monster.monster_url}}"></img>
+            </div>
+            <div id="monsterHP">
+            <div id="mhpBar" style="width: 100%; transform: translateX:({{monster.vitality}})"></div>
+            </div>
+        </div>
+        <div id="combatLog"></div>
+    </div>
 </div>
-
-<div id="monster" data-id="{{monster.id}}" class="monster-screen">
-    <div class="name">{{monster.name}}</div>
-    <div id="monsterImg">
-        <img id="monsterImg" src="{{monster.monster_url}}"></img>
-    </div>
-    <div id="monsterHP">
-    <div id="mhpBar" style="width: 100%; transform: translateX:({{monster.vitality}})"></div>
-    </div>
-    <div id="combatLog">Wow what a hit!</div>
-</div>
-
 
 
 
