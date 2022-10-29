@@ -11,7 +11,30 @@ const adventure = async () => {
 }
 
 const inventory = async () => {
-    document.location.replace('/characterCreation')
+    document.body.classList.toggle("open");
+
+    var textWrapper = document.querySelector('.anime');
+
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='anime'>$&</span>");
+    
+    if (document.body.classList == "open") {
+        anime.timeline({loop: false})
+        .add({
+            targets: '.anime',
+            opacity: [0,1],
+            easing: "easeInOutQuad",
+            duration: 1000,
+            delay: 500
+        });
+    } else{
+        anime.timeline({loop: false})
+        .add({
+            targets: '.anime',
+            opacity: [1,0],
+            easing: "easeInOutQuad",
+            duration: 300,
+        });
+    }
 }
 
 const arenaBtn = document.querySelector('#arenaBtn');
@@ -25,3 +48,6 @@ adventureBtn.addEventListener('click', adventure);
 
 const inventoryBtn = document.querySelector('#inventoryBtn');
 inventoryBtn.addEventListener('click', inventory);
+
+const closeBtn = document.querySelector('#closeBtn');
+closeBtn.addEventListener('click', inventory);
