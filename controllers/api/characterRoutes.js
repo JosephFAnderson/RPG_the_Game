@@ -30,17 +30,15 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 router.put('/:id', withAuth, async (req, res) => {
-
-    Character.update(
-        req.body,
-        {
-            where: { id: req.params.id, }
-        },
-    )
-        .then((updatedCharacter) => {
-            res.json(updatedCharacter)
-        })
-        .catch((err) => res.json(err))
+    try{
+        console.log(req.body)
+        const charData = await Character.update(req.body, {
+            where: { id: req.params.id }
+        });
+        res.status(200).json(charData);
+    }catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 router.delete('/:id', withAuth, async (req, res) => {
