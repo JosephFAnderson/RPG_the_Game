@@ -20,11 +20,16 @@
         <div class="townFooterC">
             <button id="inventoryBtn">Inventory</button>
         </div>
+        <div class="inventoryContent">
+            <div class="inventory-card">
+                <p class="inventoryTextHead anime">Armor: <span class="inventoryTextSub anime">{{character.armor.name}} Def: {{character.armor.defense}}</span></p>
+                <p class="inventoryTextHead anime">Weapon: <span class="inventoryTextSub anime">{{character.weapon.name}}  Dmg: {{character.weapon.damage}}</span></p>
+                <button class="anime" type="button" id="closeBtn">Close</button>
+            </div>
+        </div>
         <div class="townFooterC">
             <h3 id="head">Stats: </h3><h3 id="stats"> Str {{character.strength}} Def {{character.defense}} Vit {{character.vitality}}</h3>
         </div>
     </section>
 </section>
 <script src="/js/town.js"></script>
-
-{{!-- character.armor.name // character.weapon.name --}}
