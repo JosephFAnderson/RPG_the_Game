@@ -1,27 +1,34 @@
 <section class="townContainer">
     <section class="menuContainer">
-        <div class="smallContainer">
+        <div class="card1">
             <img class="townHover" id="arenaBtn" data-id="{{character.id}}" src="/images/wepik-photo-mode-2022928-122142.png" alt="arena">
             <p class="townText">Arena</p>
         </div>
-        <div class="smallContainer">
+        <div class="card1">
             <img class="townHover" id="shopBtn" data-id="{{character.id}}" src="/images/merchant.png" alt="merchant">
             <p class="townText">Shop</p>
         </div>
-        <div class="smallContainer">
+        <div class="card1">
             <img class="townHover" id="adventureBtn" data-id="{{character.id}}" src="/images/wepik-photo-mode-2022928-121641.png" alt="forest">
             <p class="townText">Adventure</p>
         </div>
     </section>
     <section class="townFooter">
-        <div>
-            <h3>Gold: {{character.gold}}</h3>
+        <div class="townFooterC">
+            <h3 id="head">Gold:</h3><h3 id="stats"> {{character.gold}}</h3>
         </div>
-        <div>
+        <div class="townFooterC">
             <button id="inventoryBtn">Inventory</button>
         </div>
-        <div>
-            <h3>Stats: </h3>
+        <div class="inventoryContent">
+            <div class="inventory-card">
+                <p class="inventoryTextHead anime">Armor: <span class="inventoryTextSub anime">{{character.armor.name}} Def: {{character.armor.defense}}</span></p>
+                <p class="inventoryTextHead anime">Weapon: <span class="inventoryTextSub anime">{{character.weapon.name}}  Dmg: {{character.weapon.damage}}</span></p>
+                <button class="anime" type="button" id="closeBtn">Close</button>
+            </div>
+        </div>
+        <div class="townFooterC">
+            <h3 id="head">Stats: </h3><h3 id="stats"> Str {{character.strength}} Def {{character.defense}} Vit {{character.vitality}}</h3>
         </div>
     </section>
 </section>

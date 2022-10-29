@@ -47,7 +47,7 @@ router.get('/characterCreation', withAuth, async (req, res) => {
 
 router.get('/town/:id', withAuth, async (req, res) => {
     try{
-        const charData = await Character.findByPk(req.params.id).catch((err) => res.json(err));
+        const charData = await Character.findByPk(req.params.id, {include: [Armor, Weapon]}).catch((err) => res.json(err));
         const character = charData.get({plain: true});        
         res.render('town', {character});
     }catch (err) {
@@ -69,16 +69,16 @@ router.get('/shop/:id', withAuth, async (req, res) => {
         
         res.render('shop', {character, weapons, armors});
     }catch (err) {
-        console.log(err);
         res.status(500).json(err);
     }    
 });
 
 router.get('/graveyard', withAuth, async (req, res) => {
     try{
-        const deadsData = await Dead.findAll({where: { user_id: req.session.user_id }});
+        const deadsData = await Dead.findAll({
+            include: Monster,
+            where: { user_id: req.session.user_id }});
         const Deads = deadsData.map(fallen => fallen.get({plain: true}));
-        console.log(Deads);
         res.render('graveyard', { Deads })
     }catch (err) {
         res.status(500).json(err);
