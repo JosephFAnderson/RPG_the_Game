@@ -215,7 +215,8 @@ input[type=number]::-webkit-outer-spin-button {
 .home-card h1 {
     font-family: titleFont;
     font-size: 64px;
-    color: rgba(92, 14, 14, .9)
+    color: rgba(92, 14, 14, .9);
+    -webkit-text-stroke: 0.1px black;
 }
 
 .home-card button {
@@ -372,6 +373,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
   }
 
+
 .townContainer {
     display: flex;
     justify-content: center;
@@ -387,48 +389,97 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    filter: none;
 }
 
-.smallContainer {
+.card1{
+    border-radius: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px;
+    flex-direction: column-reverse;
     flex-wrap: wrap;
+    filter: sepia(0%) saturate(120%) brightness(100%) hue-rotate(-330deg);
 }
 
-.smallContainer .townText {
-    color: white;
-    position: relative;
-    bottom: 20px;
-    text-align: center;
-    visibility: hidden;
+.card1 .townText{
+    color: rgba(245, 188, 0, 0.9);
+    font-size: 36px;
+    font-family: titleFont;
+    margin-top: 0;
+    margin-bottom: 5px;
+    -webkit-text-stroke: 1px black;
+    position: absolute;
+    top: 15px;
 }
 
-.smallContainer img {
+.card1 img {
     width: 50%;
     height: 50%;
+    border-radius: 35px;
+    box-shadow: none;
+    border: 2px solid rgba(245, 188, 0, 0.7);
+
 }
-.smallContainer img:hover {
-    transition: 0.5s;
+
+.card1:hover img {
+    transition: .65s;
     transition-timing-function: ease-in-out;
     width: 80%;
     height: 80%;
     cursor: pointer;
+    box-shadow: 0 0 8px 4px rgba(251, 255, 0, .5);
 }
-.smallContainer img:hover .townText {
-    visibility: visible;
+
+.card1:hover {
+    
 }
 
 .townFooter {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
     align-items: center;
-    position: fixed;
+    position: absolute;
     bottom: 0;
-    width: 100%;
-    background-color: rgba(255, 245, 227, 0.685);
+    width: 100vw;
+    height: 15vh;
+    background-image: url('/images/status-frame.png');
+    background-size: 90vw 12vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: sepia(0%) saturate(120%) brightness(100%) hue-rotate(-330deg);
+    font-family: titleFont;
+    text-align: center;
+}
+
+.townFooterC {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.townFooter #stats {
+    color: rgb(146, 29, 0);
+    font-size: 24px;
+}
+
+.townFooter #head {
+    font-size: 36px;
+    color: rgb(146, 29, 0);
+    margin-right: 15px;
+    -webkit-text-stroke: 0.1px black;
+}
+
+#inventoryBtn {
+    background-color: rgba(92, 14, 14, 0);
+    border: none;
+    color: rgba(92, 14, 14, .8);
+    font-family: titleFont;
+    font-size: 36px;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 70%;
+    -webkit-text-stroke: 0.1px black;
 }
 
 /* login page CSS */
