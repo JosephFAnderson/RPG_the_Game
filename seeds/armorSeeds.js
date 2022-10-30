@@ -2,19 +2,29 @@ const { Armor } = require('../models');
 
 const armorData = [
     {
-        name: "Iron Platemail",
+        name: "Padded Armor",
         defense: 1,
-        price: 30
+        price: 150
     },
     {
-        name: "Steel Platemail",
-        defense: 2,
-        price: 60
-    },
-    {
-        name: "Mithril Platemail",
+        name: "Bronze Chain Shirt",
         defense: 3,
-        price: 90
+        price: 300
+    },
+    {
+        name: "Iron Breastplate",
+        defense: 5,
+        price: 600
+    },
+    {
+        name: "Steel Chain Mail",
+        defense: 7,
+        price: 900
+    },
+    {
+        name: "Mithril Full Plate",
+        defense: 10,
+        price: 1200,
     }
 ]
 

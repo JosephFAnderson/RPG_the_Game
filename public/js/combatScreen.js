@@ -5,7 +5,7 @@ const charEl = document.querySelector("#player");
 const monEl = document.querySelector("#monster");
 const cLog = document.querySelector('#combatLog');
 const monHP = document.querySelector('#monHpVal');
-const playHP = document.querySelector('#playerHpVal')
+const playHP = document.querySelector('#playerHpVal');
 
 const roll = (input) => {
     try{
@@ -48,9 +48,6 @@ const attack = () => {
                 if(monster.curHealth < 1){
                     victory();
                     break;
-                }else{
-                    cLog.innerHTML += `${monster.name} has ${monster.curHealth} health left<br>`
-                    
                 }
         
             } else{
@@ -66,11 +63,8 @@ const attack = () => {
                 reducePlayerHPBar(getHP(character));
                 if(character.curHealth < 1){
                     defeat();
-                    return;
-                }else{
-                    cLog.innerHTML += `${character.name} has ${character.curHealth} health left<br>`
-                    
-                }            
+                    break;
+                }          
             }
         }
     }
@@ -83,22 +77,27 @@ const victory = async () => {
 
     const cLog = document.querySelector('#combatLog');
     cLog.innerHTML = ""
-    cLog.innerHTML = `CONGRATULATIONS! You defeated ${monster.name}.<br>You gained ${monster.gold_drop} gold and ${monster.exp_worth}xp.<br>You now have ${character.gold} gold and ${character.experience} xp!<br>`;
+    cLog.innerHTML = `CONGRATULATIONS! You defeated ${monster.name}.<br>You gained ${monster.gold_dropped} gold and ${monster.experience_given}xp.<br>You now have ${character.gold} gold and ${character.experience} xp!<br>`;
+
+    if(character.experience > character.level*30){        
+        character.experience -= (character.level*30);
+        character.level++;        
+        character.strength++;
+        character.defense++;
+        character.vitality++;
+        cLog.innerHTML += `You leveled up!<br>You are now Lv. ${character.level}`
+    }
 
     const res = await fetch(`/api/character/${character.id}`, {
         method: 'PUT',
-        body: JSON.stringify({ 
-            gold: character.gold, 
-            experience: character.experience,
-            battles_won: character.battles_won
-        }),
+        body: JSON.stringify(character),
         headers: { 'Content-type': 'application/json' }
     });
 
     if(res.ok){
         setInterval( () => {
         document.location.replace(`/town/${character.id}`)
-        }, 3000);
+        }, 4000);
     }   
 }
 
