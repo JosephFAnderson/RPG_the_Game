@@ -12,10 +12,6 @@ const adventure = async () => {
 
 const inventory = async () => {
     document.body.classList.toggle("open");
-
-    var textWrapper = document.querySelector('.anime');
-
-    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='anime'>$&</span>");
     
     if (document.body.classList == "open") {
         anime.timeline({loop: false})
