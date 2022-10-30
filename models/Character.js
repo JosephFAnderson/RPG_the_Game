@@ -59,7 +59,7 @@ Character.init(
     gold: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        defaultValue: 500,
+        defaultValue: 0,
         validate: {
             isNumeric: true
         }
@@ -90,6 +90,7 @@ Character.init(
     weapon_id: {
         type: DataTypes.INTEGER,
         allowNull: true,
+        defaultValue: 1,
         references: {
             model: "weapons",
             id: "id"
@@ -101,6 +102,7 @@ Character.init(
     armor_id: {
         type: DataTypes.INTEGER,
         allowNull: true,
+        defaultValue: 1,
         references: {
             model: "armors",
             id: "id"

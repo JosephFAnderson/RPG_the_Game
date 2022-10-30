@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const {User, Character, Armor, Weapon, Dead, Monster} = require('../models');
 const withAuth = require('../utils/auth');
+const accountAuth = require('../utils/accountAuth');
 
 
 router.get('/', async(req, res) => {
@@ -45,7 +46,7 @@ router.get('/characterCreation', withAuth, async (req, res) => {
     }
 });
 
-router.get('/town/:id', withAuth, async (req, res) => {
+router.get('/town/:id', withAuth, accountAuth, async (req, res) => {
     try{
         const charData = await Character.findByPk(req.params.id, {include: [Armor, Weapon]}).catch((err) => res.json(err));
         const character = charData.get({plain: true});        
@@ -55,7 +56,7 @@ router.get('/town/:id', withAuth, async (req, res) => {
     }
 });
 
-router.get('/shop/:id', withAuth, async (req, res) => {
+router.get('/shop/:id', withAuth, accountAuth, async (req, res) => {
     try{
         const charData = await Character.findByPk(req.params.id);
         const character = charData.get({ plain: true });
@@ -63,9 +64,11 @@ router.get('/shop/:id', withAuth, async (req, res) => {
 
         const wepData = await Weapon.findAll();
         const weapons = wepData.map(weap => weap.get({plain: true}));
+        weapons.shift();
 
         const armData = await Armor.findAll();
         const armors = armData.map(arm => arm.get({plain: true}));
+        armors.shift();
         
         res.render('shop', {character, weapons, armors});
     }catch (err) {
@@ -73,7 +76,7 @@ router.get('/shop/:id', withAuth, async (req, res) => {
     }    
 });
 
-router.get('/graveyard', withAuth, async (req, res) => {
+router.get('/graveyard', withAuth,  async (req, res) => {
     try{
         const deadsData = await Dead.findAll({
             include: Monster,
@@ -85,14 +88,14 @@ router.get('/graveyard', withAuth, async (req, res) => {
     }
 });
 
-router.get('/adventure/:id', withAuth, async (req, res) => {
+router.get('/adventure/:id', withAuth, accountAuth, async (req, res) => {
     try{
         res.render('adventure', {character_id: req.params.id});
     }catch (err) {
         res.status(500).json(err);
     }    
 });
-router.get('/combatScreen/', withAuth, async (req,res) => {    
+router.get('/combatScreen/', withAuth, accountAuth, async (req,res) => {    
     try{
         const charData = await Character.findByPk(req.query.id);
         const character = charData.get({plain:true});
@@ -107,7 +110,7 @@ router.get('/combatScreen/', withAuth, async (req,res) => {
 }    
 });
 
-router.get('/arena/:id', withAuth, async (req, res) => {
+router.get('/arena/:id', withAuth, accountAuth, async (req, res) => {
     try{
         const charData = await Character.findAll()
         const characters = charData.map(character => character.get({ plain: true }));
@@ -118,7 +121,7 @@ router.get('/arena/:id', withAuth, async (req, res) => {
     }
 });
 
-router.get('/traveling', withAuth, async (req, res) => {
+router.get('/traveling', withAuth, accountAuth, async (req, res) => {
     try{
         res.render('traveling', {character_id: req.query.id, monster_id: req.query.monId});
     }catch (err) {
