@@ -156,6 +156,99 @@ input[type=number]::-webkit-outer-spin-button {
 
 .kill{
     align-self: center;
+    display: inline-block;
+    background-color: #35323976;
+    border-radius: 10px;
+    border: 4px double #b86a6a9e;
+    color: #b67b7b9e;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 150px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    font-family: titleFont;
+}
+
+#createBtn {
+    display: inline-block;
+    background-color: #35323976;
+    border-radius: 10px;
+    border: 4px double #b86a6a9e;
+    color: #b67b7b9e;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 250px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    font-family: titleFont;
+}
+
+#selectChar {
+    display: inline-block;
+    background-color: #35323976;
+    border-radius: 10px;
+    border: 4px double #b86a6a9e;
+    color: #b67b7b9e;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 250px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    font-family: titleFont;
+}
+
+#visitGrav {
+    display: inline-block;
+    background-color: #35323976;
+    border-radius: 10px;
+    border: 4px double #b86a6a9e;
+    color: #b67b7b9e;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 150px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    font-family: titleFont;
+
+}
+
+#logOut {
+    display: inline-block;
+    background-color: #35323976;
+    border-radius: 10px;
+    border: 4px double #b86a6a9e;
+    color: #b67b7b9e;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 150px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    font-family: titleFont;
 }
 
 .deads{
@@ -776,6 +869,7 @@ body.open .inventoryContent {
     left: 0;
     width: 100%;
     z-index: -1;
+    viewport-fit: 100%;
 }
 
 .characterList {
@@ -784,3 +878,35 @@ body.open .inventoryContent {
     src: url("/font/RingbearerMedium-51mgZ.ttf");
 }
 
+/* advnture */
+#adventureChoices {
+    background-image: url("/images/adventurebg.jpg");
+    font-family: titleFont;
+
+}
+
+
+#return {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 15vh;
+    background-image: url('/images/status-frame.png');
+    background-size: 90vw 12vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: sepia(0%) saturate(120%) brightness(100%) hue-rotate(-330deg);
+    font-family: titleFont;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+
+
+/* Start https://www.cursors-4u.com */ * {cursor: url(https://cur.cursors-4u.net/sports/spo-1/spo15.cur), auto !important;} /* End https://www.cursors-4u.com */
