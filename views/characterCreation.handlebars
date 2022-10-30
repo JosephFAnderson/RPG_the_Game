@@ -1,37 +1,48 @@
-<section>
-    <div>
-        <img id="charImage" src="https://upload.wikimedia.org/wikipedia/en/7/73/Pikachu_artwork_for_Pok%C3%A9mon_Red_and_Blue.webp" alt="main character"/>
+<section class="creationContainer">
+    <div class="imageCard">
+        <div class="imageImg">
+            <img id="charImage" src="https://upload.wikimedia.org/wikipedia/en/7/73/Pikachu_artwork_for_Pok%C3%A9mon_Red_and_Blue.webp" alt="main character"/>
+        </div>
+        <div class="imageBoxContainer">
+            <form>
+                <input id="characterImage" type="url" placeholder="Image Url">
+            </form>
+            <button type="button" id="uploadBtn">Upload</button>
+        </div>
     </div>
-    <div>
-        <form>
-            <input id="characterImage" type="url" placeholder="Image Url">
-        </form>
-        <button type="button" id="uploadBtn">Upload</button>
-    </div>
-    <div>
-        <h3>Character Information</h3>
+    <div class="creationCard">
+        <h3 class="characterHead">Character Information</h3>
+        <hr>
+        <br>
         <form>
             <div>
-                <label>Name</label>
-                <input id="name" type="text">
+                <label class="characterName">Name:</label>
+                <input class="nameInput" id="name" type="text" placeholder="Enter Name">
             </div>
-            <h2><input type="number" id="points" value="8" disabled> Points Remaining</h2>
-            <label>Strength</label>
-                <input type="button" value="<" onclick="minusCountStr();">
-                    <input id="str" type="number" min="0" value="1" disabled>
-                <input type="button" value=">" onclick="addCountStr();">
-            <br>
-            <label>Defense</label>
-                <input type="button" value="<" onclick="minusCountDef();">
-                    <input id="def" type="number" min="0" value="1" disabled>
-                <input type="button" value=">" onclick="addCountDef();">
-            <br>
-            <label>Vitality</label>
-                <input type="button" value="<" onclick="minusCountVit();">
-                    <input id="vit" type="number" min="0" value="1" disabled>
-                <input type="button" value=">" onclick="addCountVit();">
+            <div class="statsContainer">
+                <h2 id="pointsR" class="characterSub"><input type="number" id="points" value="5" disabled><span id="pointsText"> Points Remaining</span></h2>
+                <div class="statsSection">
+                    <label class="statsSub">Strength:</label>
+                        <input class="statsBtn" type="button" value="-" onclick="minusCountStr();">
+                            <input id="str" type="number" min="0" value="1" disabled>
+                        <input class="statsBtn" type="button" value="+" onclick="addCountStr();">
+                </div>
+                <div class="statsSection">
+                    <label class="statsSub">Defense:</label>
+                        <input class="statsBtn" type="button" value="-" onclick="minusCountDef();">
+                            <input id="def" type="number" min="0" value="1" disabled>
+                        <input class="statsBtn" type="button" value="+" onclick="addCountDef();">
+                </div>
+                <div class="statsSection">
+                    <label class="statsSub">Vitality:</label>
+                        <input class="statsBtn" type="button" value="-" onclick="minusCountVit();">
+                            <input id="vit" type="number" min="1" value="1" disabled>
+                        <input class="statsBtn" type="button" value="+" onclick="addCountVit();">
+                </div>
+            </div>
         </form>
-        <button id="createBtn">Create Character</button>
+        <br>
+        <button class="createCharBtn" id="createBtn">Create Character</button>
     </div>
 </section>
 <script src="/js/characterCreation.js"></script>
