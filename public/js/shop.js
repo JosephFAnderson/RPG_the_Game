@@ -19,7 +19,7 @@ const returnTown = (event) => {
 
 const buyItem = async (event) => {    
     if(event.target.tagName === "BUTTON"){
-        const price = parseInt(event.target.previousElementSibling.dataset.price);
+        const price = parseInt(event.target.previousElementSibling.previousElementSibling.dataset.price);
         const curGold = parseInt(document.querySelector('#curGold').dataset.gold);
         const itemId = parseInt(event.target.parentNode.dataset.id);
         const itemType = event.target.parentNode.dataset.type;
@@ -51,7 +51,7 @@ const buyItem = async (event) => {
         })
 
         if(res.ok){
-            document.querySelector('#curGold').textContent = `You have ${newGold} gold`
+            document.querySelector('#curGold').textContent = `${newGold}`
             document.querySelector('#curGold').dataset.gold = newGold;
         }
     }
