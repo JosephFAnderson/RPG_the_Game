@@ -4,6 +4,8 @@ const initative = [];
 const charEl = document.querySelector("#player");
 const monEl = document.querySelector("#monster");
 const cLog = document.querySelector('#combatLog');
+const monHP = document.querySelector('#monHpVal');
+const playHP = document.querySelector('#playerHpVal')
 
 const roll = (input) => {
     try{
@@ -27,7 +29,7 @@ const roll = (input) => {
 }
 
 const attack = () => {
-    if(character.health > 0 && monster.health > 0){    
+    if(character.curHealth > 0 && monster.curHealth > 0){    
         const cLog = document.querySelector('#combatLog');
         cLog.innerHTML = "";
         for(let i = 0; i < 2; i++){
@@ -41,12 +43,13 @@ const attack = () => {
 
                 cLog.innerHTML += `${monster.name} takes ${damageTaken} after armor<br>`;
 
-                monster.health -= damageTaken;
-                if(monster.health < 1){
+                monster.curHealth -= damageTaken;
+                reduceMonsterHPBar(getHP(monster));
+                if(monster.curHealth < 1){
                     victory();
                     break;
                 }else{
-                    cLog.innerHTML += `${monster.name} has ${monster.health} health left<br>`
+                    cLog.innerHTML += `${monster.name} has ${monster.curHealth} health left<br>`
                     
                 }
         
@@ -59,12 +62,13 @@ const attack = () => {
                 }
 
                 cLog.innerHTML += `${character.name} takes ${damageTaken} after armor<br>`;
-                character.health -= damageTaken;
-                if(character.health < 1){
+                character.curHealth -= damageTaken;
+                reducePlayerHPBar(getHP(character));
+                if(character.curHealth < 1){
                     defeat();
                     return;
                 }else{
-                    cLog.innerHTML += `${character.name} has ${character.health} health left<br>`
+                    cLog.innerHTML += `${character.name} has ${character.curHealth} health left<br>`
                     
                 }            
             }
@@ -133,17 +137,21 @@ const defeat = async () => {
 
 const getReady = async () => {
     character = await fetch(`/api/character/${charEl.dataset.id}`).then(res => res.json()).then(data => data);
-    character.health = character.vitality*5;
-    
+    character.maxHealth = character.vitality*5;
+    character.curHealth = character.vitality*5;
     
     initative.push(character);
     
-    monster = await fetch(`/api/monster/${monEl.dataset.id}`).then(res => res.json()).then(data => data)
+    monster = await fetch(`/api/monster/${monEl.dataset.id}`).then(res => res.json()).then(data => data);
     
-    monster.health = monster.vitality*4
+    monster.maxHealth = monster.vitality*4;
+    monster.curHealth = monster.vitality*4;
 
-    const order = Math.floor(Math.random() * 2)
+    const order = Math.floor(Math.random() * 2);
     order === 1 ? initative.push(monster) : initative.unshift(monster);
+
+    playHP.textContent = `${character.curHealth} / ${character.maxHealth}`;
+    monHP.textContent = `${monster.curHealth} / ${monster.maxHealth}`;
 }
 
 const flee = () => {
@@ -166,6 +174,33 @@ const flee = () => {
             document.location.replace(`/town/${charEl.dataset.id}`);
         }, 2000);
     }
+}
+
+const reducePlayerHPBar = (value) => {
+    anime({
+        targets: '#playerHPBar',
+        width: `${value}%`,
+        easing: 'easeInOutQuad',
+        direction: 'left'
+    })
+    
+    playHP.textContent = `${character.curHealth} / ${character.maxHealth}`
+};
+
+const reduceMonsterHPBar = (value) => {
+    anime({
+        targets: '#monsterHPBar',
+        width: `${value}%`,
+        easing: 'easeInOutQuad',
+        direction: 'left'
+    })
+    
+    monHP.textContent = `${monster.curHealth} / ${monster.maxHealth}`
+}
+
+const getHP = (person) => {
+    const curHP = (person.curHealth/person.maxHealth)*100
+    return curHP;
 }
 
 getReady();

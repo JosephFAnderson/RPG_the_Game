@@ -98,7 +98,7 @@ router.get('/combatScreen/', withAuth, async (req,res) => {
         const character = charData.get({plain:true});
         const monData = await Monster.findAll();
         const monsters = monData.map(monster => monster.get({ plain: true }));
-        const monsterPossible = monsters.filter(mon => mon.id == req.query.monId || mon.id == req.query.monId-1);
+        const monsterPossible = monsters.filter(mon => mon.level == req.query.monId*2 || mon.level == req.query.monId*2-1);
         const monster = monsterPossible[Math.floor(Math.random() * monsterPossible.length)];
 
         res.render('combatScreen', {character, monster});
