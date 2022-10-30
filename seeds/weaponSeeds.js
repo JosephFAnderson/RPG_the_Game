@@ -2,19 +2,29 @@ const { Weapon } = require('../models');
 
 const weaponData = [
     {
+        name: "Bronze Dagger",
+        price: 15,
+        damage: "1d4",       
+    },
+    {
         name: "Iron Sword",
-        damage: "1d6",
-        price: 30
+        price: 300,        
+        damage: "1d6"
     },
     {
-        name: "Steel Sword",
-        damage: "2d6",
-        price: 60
+        name: "Steel Battleaxe",
+         price: 600,
+         damage: "1d10"
     },
     {
-        name: "Mithril Sword",
-        damage: "3d6",
-        price: 90
+        name: "Mithril Greatsword",        
+        price: 900,
+        damage: "2d6"
+    },
+    {
+        name: "Adamantite Glaive",
+        price: 1200,
+        damage: "2d8"        
     }
 ]
 
