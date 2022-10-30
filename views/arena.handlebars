@@ -1,15 +1,15 @@
-<section class="characterList">
+<section class="oppList">
     <h3>Characters</h3>
-        <section id="charContainer">
+        <section id="oppContainer">
         {{#each opponents as |opponent| }}
-            <div class="character" data-id="{{opponent.id}}">
-                <img data-id="{{opponent.id}}" src="{{image_url}}" alt="{{name}}">
-                <div class="charStats" data-id="{{opponent.id}}">
-                    <h4 data-id="{{opponent.id}}">{{name}}</h4>
-                    <p data-id="{{opponent.id}}">Lv: {{level}}</p>
-                    <p data-id="{{opponent.id}}">Str: {{strength}}</p>
-                    <p data-id="{{opponent.id}}">Def: {{defense}}</p>
-                    <p data-id="{{opponent.id}}">Vit: {{vitality}}</p>
+            <div class="opponent" data-id="{{opponent.id}}">
+                <img src="{{image_url}}" alt="{{name}}">
+                <div class="oppStats">
+                    <h4>{{name}}</h4>
+                    <p>Lv: {{level}}</p>
+                    <p>Str: {{strength}}</p>
+                    <p>Def: {{defense}}</p>
+                    <p>Vit: {{vitality}}</p>
                 </div>
             </div>
         {{/each}}

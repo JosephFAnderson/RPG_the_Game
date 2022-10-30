@@ -1,8 +1,8 @@
 const activate = (event) => {
     let tarEl;
-    if(event.target.className.includes('character')){      
+    if(event.target.className.includes('opponent')){      
         tarEl = event.target;
-    }else if(event.target.parentNode.className === 'charStats'){
+    }else if(event.target.parentNode.className === 'oppStats'){
         tarEl = event.target.parentNode.parentNode;
     }else{
         tarEl = event.target.parentNode;
@@ -16,7 +16,15 @@ const activate = (event) => {
     tarEl.className += " active";
 }
 
-const charContainer = document.querySelector('#charContainer');
+const selectEl = document.querySelector('#selectOpp');
+selectEl.addEventListener('click', () => {
+    const current = document.getElementsByClassName('active');
+    const char_id = document.querySelector('#selectOpp').dataset.id;
+    const opp_id = current[0].dataset.id;  
+    document.location.replace(`/arenaCombat?id=${char_id}&opp_id=${opp_id}`);
+});
+
+const charContainer = document.querySelector('#oppContainer');
 charContainer.addEventListener('click', activate)
 
 const returnBtn = document.querySelector('#returnTown');
