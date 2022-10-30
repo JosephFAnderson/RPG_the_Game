@@ -15,20 +15,20 @@
                 <label>Name</label>
                 <input id="name" type="text">
             </div>
-            <h2><input type="number" id="points" value="8"> Points Remaining</h2>
+            <h2><input type="number" id="points" value="8" disabled> Points Remaining</h2>
             <label>Strength</label>
                 <input type="button" value="<" onclick="minusCountStr();">
-                    <input id="str" type="number" min="0" value="1">
+                    <input id="str" type="number" min="0" value="1" disabled>
                 <input type="button" value=">" onclick="addCountStr();">
             <br>
             <label>Defense</label>
                 <input type="button" value="<" onclick="minusCountDef();">
-                    <input id="def" type="number" min="0" value="1">
+                    <input id="def" type="number" min="0" value="1" disabled>
                 <input type="button" value=">" onclick="addCountDef();">
             <br>
             <label>Vitality</label>
                 <input type="button" value="<" onclick="minusCountVit();">
-                    <input id="vit" type="number" min="0" value="1">
+                    <input id="vit" type="number" min="0" value="1" disabled>
                 <input type="button" value=">" onclick="addCountVit();">
         </form>
         <button id="createBtn">Create Character</button>

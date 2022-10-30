@@ -1,35 +1,47 @@
-<div class="tab">
-    <button class="tablinks" onClick="filterShop(event, 'Weapon')">Weapons</button>
-    <button class="tablinks" onClick="filterShop(event, 'Armor')">Armors</button>
-</div>
+<section class="shopBg">
+    <section class="shop">
+        <div class="tab">
+            <button class="tablinks" onClick="filterShop(event, 'Weapon')">Weapons</button>
+            <button class="tablinks" onClick="filterShop(event, 'Armor')">Armors</button>
+        </div>
 
-<section id="shop">
-    <div id="Weapon" class="tabcontent">
-        {{#each weapons as |weapon|}}
-        <section data-type="weapon" data-id="{{ id }}" class="shopCard">
-            <p>{{ name }}</p>
-            <p>Damage: {{ damage }}</p>
-            <p data-price="{{price}}">Price: {{ price }} gold</p>
-            <button class="purchase">Buy Item</button>
+        <section id="shop">
+            <div id="Weapon" class="tabcontent">
+                {{#each weapons as |weapon|}}
+                <section data-type="weapon" data-id="{{ id }}" class="shopCard">
+                    <p>{{ name }}:</p>
+                    <p id="shopText">Damage: {{ damage }}</p>
+                    <p id="shopText" data-price="{{price}}">Price: {{ price }}</p>
+                    <img id="goldIcon" src="/images/Gold.png" alt="gold">
+                    <button class="purchase">Purchase</button>
+                </section>
+                {{/each}}
+            </div>
+
+            <div id="Armor" class="tabcontent">
+                {{#each armors as |armor|}}
+                <section data-type="armor" data-id="{{ id }}" class="shopCard">
+                    <p>{{ name }}:</p>
+                    <p id="shopText">Defense: {{ defense }}</p>
+                    <p id="shopText" data-price="{{price}}">Price: {{ price }}</p>
+                    <img id="goldIcon" src="/images/Gold.png" alt="gold">
+                    <button class="purchase">Purchase</button>
+                </section>
+                {{/each}}
+            </div>
         </section>
-        {{/each}}
-    </div>
+    </section>
 
-    <div id="Armor" class="tabcontent">
-        {{#each armors as |armor|}}
-        <section data-type="armor" data-id="{{ id }}" class="shopCard">
-            <p>{{ name }}</p>
-            <p>Defense: {{ defense }}</p>
-            <p data-price="{{price}}">Price: {{ price }} gold</p>
-            <button class="purchase">Buy Item</button>
-        </section>
-        {{/each}}
-    </div>
-</section>
+    <img id="shopkeeper" src="/images/merchant-removebg.png" alt="merchant">
 
-<section>
-    <p data-gold={{character.gold}} id="curGold">You have {{character.gold}} gold</p>
-    <button data-id="{{character.id}}" id="townBtn">Return To Town</button>
+    <section class="shopFooter">
+        <div class="goldContainer">
+            <p class="goldHead">Gold: </p>
+            <h3 data-gold={{character.gold}} class="goldStats" id="curGold" >{{character.gold}}</h3>
+            <img id="goldIcon" src="/images/Gold.png" alt="gold">
+        </div>
+        <button data-id="{{character.id}}" id="townBtn">Return To Town</button>
+    </section>
 </section>
 <script src="/js/shop.js"></script>
 
