@@ -97,7 +97,11 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;    
     justify-content: space-around;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
+    background-image: url("/images/adventurebg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: titleFont;
 }
 
 .adventureImage{
@@ -1122,13 +1126,6 @@ body.open .inventoryContent {
     color: rgb(138, 138, 138);
 }
 /* advnture */
-#adventureChoices {
-    background-image: url("/images/adventurebg.jpg");
-    font-family: titleFont;
-
-}
-
-
 #return {
     display: flex;
     justify-content: space-evenly;
@@ -1138,14 +1135,16 @@ body.open .inventoryContent {
     bottom: 0;
     width: 100vw;
     height: 15vh;
+    background-color: rgba(133, 133, 133, 0);
     background-image: url('/images/status-frame.png');
-    background-size: 90vw 12vh;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    filter: sepia(0%) saturate(120%) brightness(100%) hue-rotate(-330deg);
     font-family: titleFont;
     text-align: center;
     cursor: pointer;
+    -webkit-appearance: none;
+    border: none;
 }
 
 
