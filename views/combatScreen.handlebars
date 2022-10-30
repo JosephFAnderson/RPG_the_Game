@@ -3,13 +3,13 @@
 <div id="battlefield">
     <div id="player" data-id="{{character.id}}">
         <div class="player-screen">
-            <div class="name">{{character.name}}</div>
+            <h4 class="name">{{character.name}}</h4>
             <div class="player-img">
                 <img width="600px" height="500px" id="playerImg" src="{{character.image_url}}"></img>
             </div>
-
-            <div class="player-HP">
-            <div id="phpBar" style="width: 100%; transform: translateX:({{character.vitality}})"></div>
+            <div class="healthBar">
+                <p id="playerHpVal"></p>
+                <div id="playerHPBar"></div>
             </div>
         </div>
     
@@ -21,13 +21,14 @@
     </div>
 
     <div id="monster" data-id="{{monster.id}}">
-            <div class="monster-screen">
-            <div class="name">{{monster.name}}</div>
+        <div class="monster-screen">
+            <h4 class="name">{{monster.name}}</h4>
             <div id="monsterImg">
                 <img width="600px" height="500px" id="monsterImg" src="{{monster.monster_url}}"></img>
             </div>
-            <div id="monsterHP">
-            <div id="mhpBar" style="width: 100%; transform: translateX:({{monster.vitality}})"></div>
+            <div class="healthBar">   
+                <p id="monHpVal"></p>             
+                <div id="monsterHPBar"></div>
             </div>
         </div>
         <div id="combatLog"></div>
