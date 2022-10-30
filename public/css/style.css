@@ -1154,9 +1154,3 @@ body.open .inventoryContent {
 
 /* https://www.cursors-4u.com */ 
 * {cursor: url(https://cur.cursors-4u.net/sports/spo-1/spo15.cur), auto !important;} 
-
-/* https://www.cursors-4u.com */ 
-* {cursor: url(https://cur.cursors-4u.net/sports/spo-1/spo15.cur), auto !important;} 
-.nameInput::placeholder {
-    color: rgb(138, 138, 138);
-}
