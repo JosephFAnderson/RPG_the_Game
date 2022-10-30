@@ -510,7 +510,7 @@ input[type=number]::-webkit-outer-spin-button {
     overflow: hidden;
 }
 
-.card {
+.cardlogin {
     display: flex;
     text-align: center;
     font-size: 3rem;
@@ -616,3 +616,19 @@ body.open .inventoryContent {
     src: url("/font/RingbearerMedium-51mgZ.ttf");
 
 }
+
+/* Character landing css */
+.video-container2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.characterList {
+    color: #f1f1f1;
+    font-family: titleFont;
+    src: url("/font/RingbearerMedium-51mgZ.ttf");
+}
+
