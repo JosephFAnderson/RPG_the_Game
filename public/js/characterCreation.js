@@ -20,7 +20,7 @@ const creation = async (event) => {
     const vitality = vitalityEl.value.trim();
 
     if(name && image_url && strength && defense && vitality){
-        const res = await fetch('/api/character/', {
+        const res = await fetch('/api/character', {
             method: 'POST',
             body: JSON.stringify({ name, image_url, strength, defense, vitality}),
             headers: { 'Content-type': 'application/json' }
