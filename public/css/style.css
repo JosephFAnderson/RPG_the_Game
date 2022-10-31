@@ -176,6 +176,7 @@ input[type=number]::-webkit-outer-spin-button {
     background-image: url('/images/arena.jpg');
     background-size: cover;
     height: 100vh;
+    
 }
 
 .oppList h3{
@@ -193,6 +194,17 @@ input[type=number]::-webkit-outer-spin-button {
     margin: auto;
     overflow-y: scroll;
     overflow-x: visible;
+}
+
+#oppContainer::-webkit-scrollbar{
+   width: 20px;
+}
+
+#oppContainer::-webkit-scrollbar-thumb{
+    width: 20px;
+    background-color: #a09797cc;
+    border-radius: 30px;
+    
 }
 
 .opponent{

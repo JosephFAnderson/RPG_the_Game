@@ -111,8 +111,6 @@ const monstersData = [
         gold_dropped: 250,
         monster_url: 'https://www.aidedd.org/dnd/images/water-weird.jpg'
     }
-
-
 ]
 const seedMonsters = () => Monster.bulkCreate(monstersData);
 
