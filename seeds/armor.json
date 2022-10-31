@@ -1,0 +1,27 @@
+[
+{
+    "name": "Padded Armor",
+    "defense": 1,
+    "price": 150
+},
+{
+    "name": "Bronze Chain Shirt",
+    "defense": 3,
+    "price": 300
+},
+{
+    "name": "Iron Breastplate",
+    "defense": 5,
+    "price": 600
+},
+{
+    "name": "Steel Chain Mail",
+    "defense": 7,
+    "price": 900
+},
+{
+    "name": "Mithril Full Plate",
+    "defense": 10,
+    "price": 1200
+}
+]

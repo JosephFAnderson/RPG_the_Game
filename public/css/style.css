@@ -181,17 +181,12 @@ input[type=number]::-webkit-outer-spin-button {
 
 #oppContainer::-webkit-scrollbar{
    width: 20px;
-   background-color: gray;
-}
-
-#oppContainer::-webkit-scrollbar-button{
-    width: 20px;
-    background-image: url('https://www.seekpng.com/png/full/127-1274005_up-arrow-up-arrow-sign.png');
-    background-size: 
 }
 
 #oppContainer::-webkit-scrollbar-thumb{
-    width: 100px;
+    width: 20px;
+    background-color: #a09797cc;
+    border-radius: 30px;
     
 }
 
