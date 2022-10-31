@@ -89,7 +89,7 @@ Character.init(
     },
     weapon_id: {
         type: DataTypes.INTEGER,
-        allowNull: true,
+        allowNull: false,
         defaultValue: 1,
         references: {
             model: "weapons",
@@ -101,7 +101,7 @@ Character.init(
     },
     armor_id: {
         type: DataTypes.INTEGER,
-        allowNull: true,
+        allowNull: false,
         defaultValue: 1,
         references: {
             model: "armors",
