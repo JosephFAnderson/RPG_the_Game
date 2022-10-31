@@ -963,12 +963,13 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-size:cover;
-    background-repeat: no-repeat;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    align-self: center;
+    justify-self: center;
 }
 
 .login-container form {
