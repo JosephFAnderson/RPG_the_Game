@@ -1,29 +1,29 @@
-<section class="characterList">
-    <h2>Characters</h2>
-        <section id="charContainer">
-        {{#each characters as |character| }}
-            <div class="character" data-id="{{character.id}}">
-                <img data-id="{{character.id}}" src="{{image_url}}" alt="{{name}}">
-                <div class="charStats" data-id="{{character.id}}">
-                    <h4 data-id="{{character.id}}">{{name}}</h4>
-                    <p data-id="{{character.id}}">Lv: {{level}}</p>
-                    <p data-id="{{character.id}}">Str: {{strength}}</p>
-                    <p data-id="{{character.id}}">Def: {{defense}}</p>
-                    <p data-id="{{character.id}}">Vit: {{vitality}}</p>
+<section class="landingContainer">
+    <video class="video-container2" autoplay loop muted>
+        <source src="images\HD0360.mp4" type="video/mp4">
+    </video>
+    <section class="characterList">
+        <h2>Characters</h2>
+            <section id="charContainer">
+            {{#each characters as |character| }}
+                <div class="character" data-id="{{character.id}}">
+                    <img data-id="{{character.id}}" src="{{image_url}}" alt="{{name}}">
+                    <div class="charStats" data-id="{{character.id}}">
+                        <h4 data-id="{{character.id}}">{{name}}</h4>
+                        <p data-id="{{character.id}}">Lv: {{level}}</p>
+                        <p data-id="{{character.id}}">Str: {{strength}}</p>
+                        <p data-id="{{character.id}}">Def: {{defense}}</p>
+                        <p data-id="{{character.id}}">Vit: {{vitality}}</p>
+                    </div>
+                    <button data-id="{{character.id}}" class="kill" onclick="kill(event);">Delete</button>
                 </div>
-                <button data-id="{{character.id}}" class="kill" onclick="kill(event);">Delete</button>
-            </div>
-        {{/each}}
-        </section>
-    <button id="createBtn">Create New Character</button>
-    <button id="selectChar">Select Character</button>
-    <button id="visitGrav">Visit Graveyard</button>
-    <button id="logOut">Log Out</button>
+            {{/each}}
+            </section>
+        <button id="createBtn">Create New Character</button>
+        <button id="selectChar">Select Character</button>
+        <button id="visitGrav">Visit Graveyard</button>
+        <button id="logOut">Log Out</button>
+    </section>
 </section>
-<div class="video-container2">
-        <video autoplay loop muted>
-            <source src="images\HD0360.mp4" type="video/mp4">
-        </video>
-            
-    </div>
+
 <script src="/js/characterLanding.js"></script>

@@ -2,7 +2,7 @@ const { Monster } = require('../models');
 
 const monstersData = [
     {
-        name: "Toge",
+        name: "Bear",
         strength: 3,
         defense: 2,
         vitality: 4,
@@ -10,10 +10,10 @@ const monstersData = [
         damage: '1d6',
         experience_given: 20,
         gold_dropped: 75,
-        monster_url: 'https://cdn.dribbble.com/users/2582637/screenshots/5649660/image.png'
+        monster_url: 'https://explorednd.com/wp-content/uploads/2022/07/brown_bear_5e_guide.png'
     },
     {
-        name: "Gojo",
+        name: "Red Dragon",
         strength: 10,
         defense: 10,
         vitality: 20,
@@ -21,10 +21,10 @@ const monstersData = [
         experience_given: 100,
         damage: '2d6',
         gold_dropped: 325,
-        monster_url: 'https://cdn.dribbble.com/users/2582637/screenshots/5649660/image.png'
+        monster_url: 'https://www.dndbeyond.com/avatars/thumbnails/0/399/1000/1000/636252784386259001.jpeg'
     },
     {
-        name: "Tanjiro",
+        name: "Wolf",
         strength: 2,
         defense: 2,
         vitality: 2,
@@ -32,10 +32,10 @@ const monstersData = [
         damage: '1d4',
         experience_given: 10,
         gold_dropped: 50,
-        monster_url: 'https://cdn.dribbble.com/users/2582637/screenshots/5649660/image.png'
+        monster_url: 'https://images6.alphacoders.com/105/thumb-1920-1055500.jpg'
     },
     {
-        name: "Kaneki",
+        name: "Fire Giant",
         strength: 10,
         defense: 6,
         vitality: 18,
@@ -43,7 +43,7 @@ const monstersData = [
         damage: '1d10',
         experience_given: 90,
         gold_dropped: 300,
-        monster_url: 'https://cdn.dribbble.com/users/2582637/screenshots/5649660/image.png'
+        monster_url: 'http://lilithstreasuretavern.weebly.com/uploads/1/3/7/3/13737227/s144094589190160637_p43_i1_w260.jpeg'
     },
     {
         name: 'Goblin',
@@ -111,8 +111,6 @@ const monstersData = [
         gold_dropped: 250,
         monster_url: 'https://www.aidedd.org/dnd/images/water-weird.jpg'
     }
-
-
 ]
 const seedMonsters = () => Monster.bulkCreate(monstersData);
 

@@ -25,7 +25,7 @@ anime({
     translateX: path3('x'),
     translateY: path3('y'),
     easing: 'linear',
-    duration: 4500
+    duration: 8000
 });
 
 let path4 = anime.path('.motionPath4 path');
@@ -35,17 +35,39 @@ anime({
     translateX: path4('x'),
     translateY: path4('y'),
     easing: 'linear',
-    duration: 4500
+    duration: 8000
 });
 
-let path0 = anime.path('.motionPath path0');
+let path5 = anime.path('.motionPath5 path');
 
 anime({
-    targets: '.travelingPath0 .characterPiece0',
-    translateX: path('x'),
-    translateY: path('y'),
+    targets: '.travelingPath5 .characterPiece5',
+    translateX: path5('x'),
+    translateY: path5('y'),
     easing: 'linear',
-    duration: 4500
+    duration: 8000
+});
+
+let path6 = anime.path('.motionPath6 path');
+
+anime({
+    targets: '.travelingPath6 .characterPiece6',
+    translateX: path6('x'),
+    translateY: path6('y'),
+    easing: 'linear',
+    duration: 1500,
+    loop: true
+});
+
+let path7 = anime.path('.motionPath7 path');
+
+anime({
+    targets: '.travelingPath7 .characterPiece7',
+    translateX: path7('x'),
+    translateY: path7('y'),
+    easing: 'linear',
+    duration: 4000,
+    loop: true
 });
 
 const transitionToCombat = async () => {

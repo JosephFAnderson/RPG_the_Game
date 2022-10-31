@@ -14,8 +14,8 @@ const signUp = async event => {
             body: JSON.stringify({ username, email, password }),
             headers: { 'Content-type': 'application/json'}
         });
-
-        res.ok ? document.location.replace('/characterCreation') :alert( await res.json());
+        
+        res.ok ? document.location.replace('/characterCreation') :alert( "Invalid input." );
     }
 };
 

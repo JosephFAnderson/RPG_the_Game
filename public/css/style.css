@@ -139,8 +139,25 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #charContainer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
     width: 50%;
     margin: auto;
+    height: 65vh;
+    overflow-y: scroll;
+    overflow-x: visible;
+}
+
+#charContainer::-webkit-scrollbar {
+    width: 20px;
+}
+
+#charContainer::-webkit-scrollbar-thumb {
+    width: 20px;
+    background-color: #a09797cc;
+    border-radius: 30px;
 }
 
 .active, .character:hover {
@@ -159,6 +176,7 @@ input[type=number]::-webkit-outer-spin-button {
     background-image: url('/images/arena.jpg');
     background-size: cover;
     height: 100vh;
+    
 }
 
 .oppList h3{
@@ -172,14 +190,28 @@ input[type=number]::-webkit-outer-spin-button {
 
 #oppContainer{
     width: 50%;
+    height: 85%;
     margin: auto;
+    overflow-y: scroll;
+    overflow-x: visible;
+}
+
+#oppContainer::-webkit-scrollbar{
+   width: 20px;
+}
+
+#oppContainer::-webkit-scrollbar-thumb{
+    width: 20px;
+    background-color: #a09797cc;
+    border-radius: 30px;
+    
 }
 
 .opponent{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 100%;
+    width: 90%;
     height: 200px;
     cursor: pointer;
     margin: 5px auto;
@@ -526,8 +558,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .characterPiece {
-    width: 100px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
     position: absolute;
     top: -120px;
     left: -60px;
@@ -538,11 +570,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .characterPiece2 {
-    width: 70px;
-    height: 70px;
+    width: 55px;
+    height: 55px;
     position: absolute;
-    top: -28px;
-    left: -20px;
+    top: -50px;
+    left: -32px;
 }
 
 .travelingPath3 {
@@ -550,8 +582,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .characterPiece3 {
-    width: 80px;
-    height: 80px;
+    width: 55px;
+    height: 55px;
     position: absolute;
     top: -28px;
     left: -20px;
@@ -562,23 +594,48 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .characterPiece4 {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     position: absolute;
     top: -28px;
     left: -20px;
 }
 
-/* .encounter {
-    color: rgb(255, 0, 0);
-    filter: invert(0) sepia(0%) saturate(100%) brightness(100%) hue-rotate(-330deg);
+.travelingPath5 {
+    position: relative;
 }
 
-.encounter .letter {
-    display: inline-block;
-    font-size: 100px;
-    font-family: titleFont;
-} */
+.characterPiece5 {
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    top: -28px;
+    left: -20px;
+}
+
+.travelingPath6 {
+    position: relative;
+}
+
+.characterPiece6 {
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    top: -28px;
+    left: -20px;
+}
+
+.travelingPath7 {
+    position: relative;
+}
+
+.characterPiece7 {
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    top: -28px;
+    left: -20px;
+}
 
 .encounter {
     display: flex;
@@ -1109,22 +1166,41 @@ body.open .inventoryContent {
 }
 
 /* Character landing css */
-.video-container2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: -1;
-    background-size:cover;
-    background-repeat: no-repeat;
+.landingContainer {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    grid-auto-rows: 200px;
+    grid-template-areas:
+        "a";
 }
 
+.video-container2 {
+    grid-area: a;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    align-self: center;
+    justify-self: center;
+}
 
 .characterList {
+    width: 100%;
+    position: fixed;
+    top: 10%;
+    grid-area: a;
+    align-self: center;
+    justify-self: center;
+    position: center;
     text-align: center;
     color: #f1f1f1;
     font-family: titleFont;
     src: url("/font/RingbearerMedium-51mgZ.ttf");
+    z-index: 1;
 }
 
 .creationContainer {
@@ -1182,7 +1258,7 @@ body.open .inventoryContent {
     cursor: pointer;
     padding: 0;
     position: relative;
-    left: 60%;
+    left: 55%;
     -webkit-text-stroke: 1px black;
     margin: 5px;
 }
@@ -1316,7 +1392,7 @@ body.open .inventoryContent {
 }
 
 #str, #def, #vit {
-    width: 12px;
+    width: 20px;
     font-family: titleFont;
     font-size: 32px;
     color: rgba(129, 10, 10, 0.8);
@@ -1541,4 +1617,12 @@ body.open .inventoryContent {
     top: 10px;
     bottom: 10px;
 
+
+#createBtn1 {
+    background-color: rgba(92, 14, 14, 0);
+    color: rgba(92, 14, 14, .8);
+    font-family: titleFont;
+    font-size: 36px;
+    cursor: pointer;
+    -webkit-text-stroke: 1px black;
 }

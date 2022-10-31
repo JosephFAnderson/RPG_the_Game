@@ -20,12 +20,12 @@ const creation = async (event) => {
     const vitality = vitalityEl.value.trim();
 
     if(name && image_url && strength && defense && vitality){
-        const res = await fetch('/api/character/', {
+        const res = await fetch('/api/character', {
             method: 'POST',
             body: JSON.stringify({ name, image_url, strength, defense, vitality}),
             headers: { 'Content-type': 'application/json' }
         });
-        res.ok ? document.location.replace('/characterLanding') :alert( await res.json());
+        res.ok ? document.location.replace('/characterLanding') : console.log(res.json());
     }
 }
 
@@ -33,11 +33,11 @@ const minusCountStr = () => {
     let points = document.querySelector('#points');
     let inputs = document.querySelector('#str');
     let input = inputs.value;
-    if (input > 0) {
+    if (input > 1) {
         inputs.stepDown();
         points.stepUp();
     } else {
-        alert(message="stop");
+        alert(message="Cannot go further.");
     }
 }
 
@@ -49,7 +49,7 @@ const addCountStr = () => {
         input.stepUp();
         points.stepDown();
     } else {
-        alert(message="stop");
+        alert(message="Cannot go further.");
     }
 }
 
@@ -57,11 +57,11 @@ const minusCountDef = () => {
     let points = document.querySelector('#points');
     let inputs = document.querySelector('#def');
     let input = inputs.value;
-    if (input > 0) {
+    if (input > 1) {
         inputs.stepDown();
         points.stepUp();
     } else {
-        alert(message="stop");
+        alert(message="Cannot go further.");
     }
 }
 
@@ -73,7 +73,7 @@ const addCountDef = () => {
         input.stepUp();
         points.stepDown();
     } else {
-        alert(message="stop");
+        alert(message="Cannot go further.");
     }
 }
 
@@ -81,11 +81,11 @@ const minusCountVit = () => {
     let points = document.querySelector('#points');
     let inputs = document.querySelector('#vit');
     let input = inputs.value;
-    if (input > 0) {
+    if (input > 1) {
         inputs.stepDown();
         points.stepUp();
     } else {
-        alert(message="stop");
+        alert(message="Cannot go further.");
     }
 }
 
@@ -97,12 +97,12 @@ const addCountVit = () => {
         input.stepUp();
         points.stepDown();
     } else {
-        alert(message="stop");
+        alert(message="Cannot go further.");
     }
 }
 
 const uploadBtn = document.querySelector('#uploadBtn');
 uploadBtn.addEventListener('click', upload);
 
-const createBtn = document.querySelector('#createBtn');
-createBtn.addEventListener('click', creation);
+const createBtn1 = document.querySelector('#createBtn1');
+createBtn1.addEventListener('click', creation);
