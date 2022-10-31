@@ -14,9 +14,9 @@ router.get('/:id', async (req, res) => {
     }    
 });
 
-router.post('/', withAuth, async (req, res) => {
-    req.body.user_id = req.session.user_id;
+router.post('/', withAuth, async (req, res) => {    
     try {
+        req.body.user_id = req.session.user_id;
         const newChar = await Character.create(
             req.body
         );
@@ -25,7 +25,7 @@ router.post('/', withAuth, async (req, res) => {
 
     }
     catch (err) {
-        res.status(500).json(err)
+        res.status(500).json(req.body)
     }
 });
 

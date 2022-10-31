@@ -25,7 +25,7 @@ const creation = async (event) => {
             body: JSON.stringify({ name, image_url, strength, defense, vitality}),
             headers: { 'Content-type': 'application/json' }
         });
-        res.ok ? document.location.replace('/characterLanding') : console.log(res);
+        res.ok ? document.location.replace('/characterLanding') : console.log(res.json());
     }
 }
 
