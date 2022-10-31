@@ -1185,7 +1185,7 @@ body.open .inventoryContent {
     cursor: pointer;
     padding: 0;
     position: relative;
-    left: 60%;
+    left: 55%;
     -webkit-text-stroke: 1px black;
     margin: 5px;
 }
@@ -1319,7 +1319,7 @@ body.open .inventoryContent {
 }
 
 #str, #def, #vit {
-    width: 12px;
+    width: 20px;
     font-family: titleFont;
     font-size: 32px;
     color: rgba(129, 10, 10, 0.8);
@@ -1472,4 +1472,13 @@ body.open .inventoryContent {
 .menuHeader button:hover {
     font-size: 18px;
     transition: 0.5s ease;
+}
+
+#createBtn1 {
+    background-color: rgba(92, 14, 14, 0);
+    color: rgba(92, 14, 14, .8);
+    font-family: titleFont;
+    font-size: 36px;
+    cursor: pointer;
+    -webkit-text-stroke: 1px black;
 }
