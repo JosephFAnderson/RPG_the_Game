@@ -1628,3 +1628,7 @@ body.open .inventoryContent {
     cursor: pointer;
     -webkit-text-stroke: 1px black;
 }
+
+.deadImage{
+    filter: saturate(0%);
+}

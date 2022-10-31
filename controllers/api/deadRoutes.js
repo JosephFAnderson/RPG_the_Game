@@ -8,7 +8,7 @@ router.post('/',  async (req, res) => {
             name: req.body.name,
             level: req.body.level,
             battle_count: req.body.battles_won,
-            iamge_url: req.body.iamge_url,
+            image_url: req.body.image_url,
             monster_id: req.body.monster_id,
             user_id: req.body.user_id
         });
