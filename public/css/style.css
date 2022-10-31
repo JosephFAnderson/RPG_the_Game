@@ -139,8 +139,25 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #charContainer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
     width: 50%;
     margin: auto;
+    height: 65vh;
+    overflow-y: scroll;
+    overflow-x: visible;
+}
+
+#charContainer::-webkit-scrollbar {
+    width: 20px;
+}
+
+#charContainer::-webkit-scrollbar-thumb {
+    width: 20px;
+    background-color: #a09797cc;
+    border-radius: 30px;
 }
 
 .active, .character:hover {
@@ -1149,22 +1166,41 @@ body.open .inventoryContent {
 }
 
 /* Character landing css */
-.video-container2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: -1;
-    background-size:cover;
-    background-repeat: no-repeat;
+.landingContainer {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    grid-auto-rows: 200px;
+    grid-template-areas:
+        "a";
 }
 
+.video-container2 {
+    grid-area: a;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    align-self: center;
+    justify-self: center;
+}
 
 .characterList {
+    width: 100%;
+    position: fixed;
+    top: 10%;
+    grid-area: a;
+    align-self: center;
+    justify-self: center;
+    position: center;
     text-align: center;
     color: #f1f1f1;
     font-family: titleFont;
     src: url("/font/RingbearerMedium-51mgZ.ttf");
+    z-index: 1;
 }
 
 .creationContainer {
