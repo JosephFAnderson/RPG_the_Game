@@ -11,11 +11,11 @@ const kill = async (event) => {
 
 const activate = (event) => {
     let tarEl;
-    if(event.target.className.includes('character')){      
+    if(event.target.className.includes('selector')){      
         tarEl = event.target;
-    }else if(event.target.parentNode.className === 'charStats'){
+    }else if(event.target.parentNode.className.includes('charStats')){
         tarEl = event.target.parentNode.parentNode;
-    }else{
+    }else if(event.target.className.includes('charChild')){
         tarEl = event.target.parentNode;
     }
     

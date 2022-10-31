@@ -36,7 +36,7 @@ const attack = () => {
             if(initative[i].name === character.name){
                 const damage = roll(`${character.weapon.damage}+${character.strength}`);
                 cLog.innerHTML += `${character.name} attacks ${opponent.name} for ${damage}<br>`;
-                let damageTaken = damage - opponent.defense;
+                let damageTaken = damage - opponent.armor.defense - opponent.defense;
                 if(damageTaken < 0){
                     damageTaken = 0
                 }
@@ -53,7 +53,7 @@ const attack = () => {
             } else{
                 const damage = roll(`${opponent.weapon.damage}+${opponent.strength}`);
                 cLog.innerHTML += `${opponent.name} attacks ${character.name} for ${damage}<br>`;
-                let damageTaken = damage - character.armor.defense;
+                let damageTaken = damage - character.armor.defense - character.defense;
                 if(damageTaken < 0){
                     damageTaken = 0
                 }
@@ -134,7 +134,7 @@ const flee = () => {
 };
 
 const reducePlayerHPBar = (value) => {
-    anime({
+        anime({
         targets: '#playerHPBar',
         width: `${value}%`,
         easing: 'easeInOutQuad',
@@ -156,6 +156,9 @@ const reduceMonsterHPBar = (value) => {
 };
 
 const getHP = (person) => {
+    if(person.curHealth < 0){
+        person.curHealth = 0;
+    }
     const curHP = (person.curHealth/person.maxHealth)*100
     return curHP;
 };

@@ -53,7 +53,7 @@ const attack = () => {
             } else{
                 const damage = monster.strength;
                 cLog.innerHTML += `${monster.name} attacks ${character.name} for ${damage}<br>`;
-                let damageTaken = damage - character.armor.defense;
+                let damageTaken = damage - character.armor.defense - character.defense;
                 if(damageTaken < 0){
                     damageTaken = 0
                 }
@@ -79,7 +79,7 @@ const victory = async () => {
     cLog.innerHTML = ""
     cLog.innerHTML = `CONGRATULATIONS! You defeated ${monster.name}.<br>You gained ${monster.gold_dropped} gold and ${monster.experience_given}xp.<br>You now have ${character.gold} gold and ${character.experience} xp!<br>`;
 
-    if(character.experience > character.level*30){        
+    if(character.experience >= character.level*30){        
         character.experience -= (character.level*30);
         character.level++;        
         character.strength++;
@@ -200,6 +200,9 @@ const reduceMonsterHPBar = (value) => {
 }
 
 const getHP = (person) => {
+    if(person.curHealth < 0){
+        person.curHealth = 0;
+    }
     const curHP = (person.curHealth/person.maxHealth)*100
     return curHP;
 }

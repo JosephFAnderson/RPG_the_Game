@@ -6,9 +6,9 @@
         <h2>Characters</h2>
             <section id="charContainer">
             {{#each characters as |character| }}
-                <div class="character" data-id="{{character.id}}">
-                    <img data-id="{{character.id}}" src="{{image_url}}" alt="{{name}}">
-                    <div class="charStats" data-id="{{character.id}}">
+                <div class="character selector" data-id="{{character.id}}">
+                    <img class="charChild" data-id="{{character.id}}" src="{{image_url}}" alt="{{name}}">
+                    <div class="charStats charChild" data-id="{{character.id}}">
                         <h4 data-id="{{character.id}}">{{name}}</h4>
                         <p data-id="{{character.id}}">Lv: {{level}}</p>
                         <p data-id="{{character.id}}">Str: {{strength}}</p>
