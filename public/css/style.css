@@ -1609,6 +1609,7 @@ body.open .inventoryContent {
         color: rgba(92, 14, 14, .9);
         -webkit-text-stroke: 0.1px black;
 }
+
 #signUpBtn{
     background:rgba(0,0,0,0);   
     font-family: titleFont;
@@ -1616,7 +1617,7 @@ body.open .inventoryContent {
     position: relative;
     top: 10px;
     bottom: 10px;
-
+}
 
 #createBtn1 {
     background-color: rgba(92, 14, 14, 0);
