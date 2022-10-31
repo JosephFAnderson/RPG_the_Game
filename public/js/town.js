@@ -1,3 +1,11 @@
+const characterMenu = async () => {
+    document.location.replace(`/characterLanding`)
+}
+
+const logout = async () => {
+    document.location.replace(`/`)
+}
+
 const arena = async () => {
     document.location.replace(`/arena/${arenaBtn.dataset.id}`)
 }
@@ -32,6 +40,12 @@ const inventory = async () => {
         });
     }
 }
+
+const characterMenuBtn = document.querySelector('#characterMenuBtn');
+characterMenuBtn.addEventListener('click', characterMenu);
+
+const logoutBtn = document.querySelector('#logoutBtn');
+logoutBtn.addEventListener('click', logout);
 
 const arenaBtn = document.querySelector('#arenaBtn');
 arenaBtn.addEventListener('click', arena);

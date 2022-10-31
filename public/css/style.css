@@ -99,8 +99,9 @@ input[type=number]::-webkit-outer-spin-button {
     align-items: center;
     height: 100vh;
     background-image: url("/images/knights-canyon-challenge-dragon-digital-painting.jpg");
-    background-size: cover;
+    background-size: 100vw 100vh;
     background-repeat: no-repeat;
+    background-position: center;
     font-family: titleFont;
 }
 
@@ -110,6 +111,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .grow img{
+    border-radius: 30px;
     transition: 1s ease;
 }
 
@@ -123,7 +125,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .monLv{
     text-align: center;
-    font-size: large;
+    font-size: 20px;
     color: rgb(213, 213, 213);
 }
 
@@ -373,15 +375,20 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .deads{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     height: 100vh;
     background-image: url('/images/graveyard.png');
     background-size: cover;
+    flex-direction: column;
 }
 
 .deads h3{
     margin: 0;
     text-align: center;
     color: white;
+    margin-top: 50px;
 }
 
 .coffin{
@@ -395,34 +402,35 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .motion-path{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
 }
 
 #leafPath{
-    position: absolute;
-    left: 200px;
-    top: 400px;
+    top: 0;
 }
 
 #leaf{
     width: 50px;
     position: absolute;
     left: 200px;
-    top: 375px;
+    top: -50px;
 }
 
 #leaf2{
     width: 50px;
     position: absolute;
-    left: 400px;
-    top: 375px;
+    left: 0px;
+    top: -120px;
 }
 
 #leaf3{
     width: 50px;
     position: absolute;
     left: 150px;
-    top: 350px;
+    top: 0px;
 }
 
 .coffin img{
@@ -867,8 +875,13 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 36px;
     cursor: pointer;
     padding: 0;
-    margin-right: 45%;
+    margin-right: 65%;
     -webkit-text-stroke: 1px black;
+    transition: 0.5s ease;
+}
+#inventoryBtn:hover {
+    transition: 0.5s ease;
+    font-size: 40px;
 }
 
 /* login page CSS */
@@ -918,15 +931,13 @@ input[type=number]::-webkit-outer-spin-button {
     background-repeat: no-repeat;
     background-position: center;
     bottom: 0;
-    transition: 0.5s;
-    transition-timing-function: ease-in-out;
     font-size: 0px;
+    transition: 1s ease;
 }
 
 body.open .inventoryContent {
     visibility: visible;
-    transition: 0.5s;
-    transition-timing-function: ease-in-out;
+    transition: 1s ease;
     background-size: 1000px 700px;
 }
 
@@ -1089,7 +1100,14 @@ body.open .inventoryContent {
     cursor: pointer;
     padding: 0;
     -webkit-text-stroke: 1px black;
+    transition: 0.5s ease;
 }
+
+#townBtn:hover {
+    transition: 0.5s ease;
+    font-size: 40px;
+}
+
 /* Character landing css */
 .video-container2 {
     position: absolute;
@@ -1337,13 +1355,12 @@ body.open .inventoryContent {
 /* advnture */
 #return {
     display: flex;
-    justify-content: space-evenly;
-    flex-direction: row-reverse;
+    justify-content: center;
     align-items: center;
     position: absolute;
     bottom: 0;
-    width: 100vw;
-    height: 15vh;
+    width: 30%;
+    height: 20%;
     background-color: rgba(133, 133, 133, 0);
     background-image: url('/images/status-frame.png');
     background-size: contain;
@@ -1352,16 +1369,104 @@ body.open .inventoryContent {
     font-family: titleFont;
     text-align: center;
     cursor: pointer;
-    -webkit-appearance: none;
     border: none;
-    margin: 0 auto;
-    display: block;
-    font-size: larger ;
+    transition: 1s ease;
+    overflow: hidden;
 }
 
+#returnBtn {
+    background-color: rgba(92, 14, 14, 0);
+    border: none;
+    color: rgba(92, 14, 14, .8);
+    font-family: titleFont;
+    font-size: 36px;
+    cursor: pointer;
+    padding: 0;
+    -webkit-text-stroke: 1px black;
+}
 
+#return:hover{
+    transition: 1s ease;
+    width: 32%;
+    height: 22%;
+    cursor: pointer;
+    overflow: hidden;
+}
 
+#rtnChar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 30%;
+    height: 20%;
+    background-color: rgba(133, 133, 133, 0);
+    background-image: url('/images/status-frame.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: titleFont;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    transition: 1s ease;
+    overflow: hidden;
+}
 
+#rtnChar:hover{
+    transition: 1s ease;
+    width: 32%;
+    height: 22%;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#rtnCharBtn {
+    background-color: rgba(92, 14, 14, 0);
+    border: none;
+    color: rgba(92, 14, 14, .8);
+    font-family: titleFont;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 0;
+    -webkit-text-stroke: 1px black;
+}
 
 /* https://www.cursors-4u.com */ 
 * {cursor: url(https://cur.cursors-4u.net/sports/spo-1/spo15.cur), auto !important;} 
+
+.menuHeader {
+    height: 40vh;
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("/images/401927-PD6O8G-136-removebg-preview.png");
+    background-size: 15vw 30vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0%;
+    right: 2%;
+    filter: sepia(0%) saturate(100%) brightness(100%) hue-rotate(-330deg);
+}
+
+.menuHeader button {
+    background-color: rgba(92, 14, 14, 0);
+    border: none;
+    color: goldenrod;
+    font-family: titleFont;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    transition: 0.5s ease;
+}
+
+.menuHeader button:hover {
+    font-size: 18px;
+    transition: 0.5s ease;
+}
