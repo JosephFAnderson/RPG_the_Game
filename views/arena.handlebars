@@ -1,11 +1,11 @@
 <section class="oppList">
-    <h3>Characters</h3>
+    <h3>Pick Your Opponent!</h3>
         <section id="oppContainer">
-        {{#each opponents as |opponent| }}
-            <div class="opponent" data-id="{{opponent.id}}">
-                <img src="{{image_url}}" alt="{{name}}">
-                <div class="oppStats">
-                    <h4>{{name}}</h4>
+        {{#each opponents as |opponent| }}            
+            <div class="opponent {{tier}}" data-id="{{opponent.id}}">            
+                <img class="oppImage" src="{{image_url}}" alt="{{name}}">
+                <h4>{{name}}</h4>
+                <div class="oppStats">                    
                     <p>Lv: {{level}}</p>
                     <p>Str: {{strength}}</p>
                     <p>Def: {{defense}}</p>
@@ -14,7 +14,11 @@
             </div>
         {{/each}}
         </section>
-    <button data-id="{{character_id}}" id="selectOpp">Select Opponent</button>
-    <button data-id="{{character_id}}" id="returnTown">Return To Town</button>
+    <div id="arenaBtnContainer">
+        <image id="leftArenaSword" src="/images/sword-text.png"></image>
+        <image id="rightArenaSword" src="/images/sword-text.png"></image>
+        <button data-id="{{character_id}}" class="arenaBtn" id="selectOpp">Select Opponent</button>
+        <button data-id="{{character_id}}" class="arenaBtn" id="returnTown">Return To Town</button>
+    </div>
 </section>
 <script src="/js/arena.js"></script>

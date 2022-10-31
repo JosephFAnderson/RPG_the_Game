@@ -116,6 +116,16 @@ router.get('/arena/:id', withAuth, accountAuth, async (req, res) => {
         const charData = await Character.findAll()
         const characters = charData.map(character => character.get({ plain: true }));
         const opponents = characters.filter(character => character.user_id !== req.session.user_id);
+        opponents.forEach( opponent => {
+            if(opponent.level < 5){
+                opponent.tier = 'bronze';
+            }else if (opponent.level > 9){
+                opponent.tier = 'gold';
+            }else{
+                opponent.tier = 'silver';
+            }
+        })
+
         res.render('arena', { opponents, character_id: req.params.id });
     }catch (err) {
         res.status(500).json(err);

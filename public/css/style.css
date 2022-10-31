@@ -156,6 +156,18 @@ input[type=number]::-webkit-outer-spin-button {
 
 .oppList{
     text-align: center;
+    background-image: url('/images/arena.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+
+.oppList h3{
+    margin: 0;
+    padding-top: 10px;
+    font-size: 1.5em;
+    text-shadow: -3px -3px black;
+    color: #ffffff;
+    font-family: titleFont;
 }
 
 #oppContainer{
@@ -165,22 +177,105 @@ input[type=number]::-webkit-outer-spin-button {
 
 .opponent{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    align-items: center;
     width: 100%;
+    height: 200px;
     cursor: pointer;
-    margin: 2px auto;
+    margin: 5px auto;
+    position: relative;
+    z-index: 100;   
+    background-size: 100% 100%;
+    font-family: titleFont;
+}
+
+.bronze{
+    background-image: url('/images/bronzeBanner.png');
+}
+
+.silver{
+    background-image: url('/images/silverBanner.png');
+}
+
+.gold{
+    background-image: url('/images/goldBanner.png');
+}
+
+.opponent h4{
+    font-size: 1.25em;
+    margin-right: 30px;
 }
 
 .oppStats{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    justify-items: space-around;
+    font-size: 1.15em
 }
 
-.active, .opponent:hover {
-    background-color: rgba(76, 129, 190, 0.281);
+.oppStats p{
+    margin: 0;
+}
+
+.oppImage{
+    height: 130px;
+}
+
+.selected, .opponent:hover {
+    /* background-color: rgba(76, 129, 190, 0.281); */
+    border: 5px rgba(218, 165, 32, 0.712) solid;
+    border-radius: 10% / 50%;
+    box-shadow: 0 0 8px 4px rgba(251, 255, 0, .5)
   }
+
+#arenaBtnContainer{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+    width: 960px;
+    height: 55px;
+    margin: 0 auto;
+}
+
+#leftArenaSword{
+    width: 250px;
+    position: absolute;
+    left: 220px;
+}
+
+#rightArenaSword{
+    transform: rotate(180deg);
+    width: 250px;
+    position: absolute;
+    right: 220px;
+}
+
+#selectOpp{
+    position: absolute;
+    left: 300px; 
+    top: 25px;  
+    align-self: center;
+
+}
+
+#returnTown{
+    position: absolute;
+    right: 300px;
+    top: 25px;
+    align-self: center;
+}
+
+.arenaBtn{
+    margin: 0 10px;
+    position: relative;
+    background: none;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: titleFont;
+    color: #424242
+}
 
 .kill{
     align-self: center;
