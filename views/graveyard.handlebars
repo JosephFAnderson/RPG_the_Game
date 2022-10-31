@@ -1,14 +1,4 @@
 <section class="deads">
-    <div class="motion-path-container">
-        <div class="motion-path">
-            <image id="leaf" src="/images/leaf.png"></image>
-            <image id="leaf2" src="/images/leaf.png"></image>
-            <image id="leaf3" src="/images/leaf.png"></image>
-            <svg width="1000" height="400" id="leafPath">
-                <path fill="none" stroke="currentColor" stroke-width="0" d="M 10 350 Q 10 330 50 330 Q 80 340 80 360 Q 100 400 130 390 Q 170 400 190 370 Q 190 340 160 340 Q 110 340 130 370 A 50 40 0 0 0 200 320 A 50 50 0 1 0 110 340 Q 160 410 250 360 L 320 330 Q 370 280 450 340 Q 510 370 570 350 L 670 300 A 50 50 0 1 0 560 250 A 50 50 0 1 0 730 300 Q 740 260 790 270 Q 865 270 950 90 Q 990 30 870 70 L 700 160 Q 570 250 430 240 Q 325 230 270 180 Q 220 130 100 220 Q 65 250 50 280 Z"></path>                
-            </svg>
-        </div>
-    </div>
     <h3>Fallen Heros</h3>
     {{#each Deads as |Dead| }}
         <div class="coffin" data-id="{{id}}">
@@ -19,6 +9,18 @@
             <p data-id="{{id}}">Slain by: {{monster.name}}</p>
         </div>
     {{/each}}
-    <button id="return">Return to Characters</button>
+    <div class="travel-Page">
+        <div class="motion-path">
+            <image id="leaf" src="/images/leaf.png"></image>
+            <image id="leaf2" src="/images/leaf.png"></image>
+            <image id="leaf3" src="/images/leaf.png"></image>
+            <svg width="1000" height="400" id="leafPath">
+                <path fill="none" stroke="currentColor" stroke-width="0" d="M 10 350 Q 10 330 50 330 Q 80 340 80 360 Q 100 400 130 390 Q 170 400 190 370 Q 190 340 160 340 Q 110 340 130 370 A 50 40 0 0 0 200 320 A 50 50 0 1 0 110 340 Q 160 410 250 360 L 320 330 Q 370 280 450 340 Q 510 370 570 350 L 670 300 A 50 50 0 1 0 560 250 A 50 50 0 1 0 730 300 Q 740 260 790 270 Q 865 270 950 90 Q 990 30 870 70 L 700 160 Q 570 250 430 240 Q 325 230 270 180 Q 220 130 100 220 Q 65 250 50 280 Z"></path>                
+            </svg>
+        </div>
+    </div>
+    <div id="rtnChar">
+        <button id="rtnCharBtn">Return to Characters</button>
+    </div>
 </section>
 <script src="/js/graveyard.js"></script>
