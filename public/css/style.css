@@ -406,6 +406,28 @@ input[type=number]::-webkit-outer-spin-button {
     font-family: titleFont;
 }
 
+.deadContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    height: 65vh;
+    overflow-y: scroll;
+    overflow-x: visible;
+}
+
+.deadContainer::-webkit-scrollbar {
+    width: 20px;
+}
+
+.deadContainer::-webkit-scrollbar-thumb {
+    width: 20px;
+    background-color: #a09797cc;
+    border-radius: 30px;
+}
+
 .deads{
     display: flex;
     justify-content: flex-start;
@@ -447,22 +469,22 @@ input[type=number]::-webkit-outer-spin-button {
 #leaf{
     width: 50px;
     position: absolute;
-    left: 200px;
-    top: -50px;
+    left: 0px;
+    top: -500px;
 }
 
 #leaf2{
     width: 50px;
     position: absolute;
     left: 0px;
-    top: -120px;
+    top: -620px;
 }
 
 #leaf3{
     width: 50px;
     position: absolute;
     left: 150px;
-    top: 0px;
+    top: -800px;
 }
 
 .coffin img{
