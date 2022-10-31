@@ -529,8 +529,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .characterPiece {
-    width: 100px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
     position: absolute;
     top: -120px;
     left: -60px;
@@ -541,11 +541,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .characterPiece2 {
-    width: 70px;
-    height: 70px;
+    width: 55px;
+    height: 55px;
     position: absolute;
-    top: -28px;
-    left: -20px;
+    top: -50px;
+    left: -32px;
 }
 
 .travelingPath3 {
@@ -553,8 +553,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .characterPiece3 {
-    width: 80px;
-    height: 80px;
+    width: 55px;
+    height: 55px;
     position: absolute;
     top: -28px;
     left: -20px;
@@ -565,23 +565,48 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .characterPiece4 {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     position: absolute;
     top: -28px;
     left: -20px;
 }
 
-/* .encounter {
-    color: rgb(255, 0, 0);
-    filter: invert(0) sepia(0%) saturate(100%) brightness(100%) hue-rotate(-330deg);
+.travelingPath5 {
+    position: relative;
 }
 
-.encounter .letter {
-    display: inline-block;
-    font-size: 100px;
-    font-family: titleFont;
-} */
+.characterPiece5 {
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    top: -28px;
+    left: -20px;
+}
+
+.travelingPath6 {
+    position: relative;
+}
+
+.characterPiece6 {
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    top: -28px;
+    left: -20px;
+}
+
+.travelingPath7 {
+    position: relative;
+}
+
+.characterPiece7 {
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    top: -28px;
+    left: -20px;
+}
 
 .encounter {
     display: flex;
