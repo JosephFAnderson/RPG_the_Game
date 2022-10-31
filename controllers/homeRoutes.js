@@ -96,7 +96,7 @@ router.get('/adventure/:id', withAuth, accountAuth, async (req, res) => {
     }    
 });
 
-router.get('/combatScreen/', withAuth, accountAuth, async (req,res) => {    
+router.get('/combatScreen', withAuth, accountAuth, async (req,res) => {    
     try{
         const charData = await Character.findByPk(req.query.id);
         const character = charData.get({plain:true});
