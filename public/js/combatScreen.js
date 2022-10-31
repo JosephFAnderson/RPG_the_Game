@@ -51,7 +51,7 @@ const attack = () => {
                 }
         
             } else{
-                const damage = monster.strength;
+                const damage = roll(`${monster.damage}+${monster.strength}`);
                 cLog.innerHTML += `${monster.name} attacks ${character.name} for ${damage}<br>`;
                 let damageTaken = damage - character.armor.defense - character.defense;
                 if(damageTaken < 0){
@@ -157,7 +157,7 @@ const flee = () => {
     fleeBTN.disabled = "disabled";
     const cLog = document.querySelector('#combatLog');
     cLog.innerHTML = "";
-    const damage = monster.strength;
+    const damage = roll(`${monster.damage}+${monster.strength}`);
     cLog.innerHTML += `${monster.name} attacks ${character.name} for ${damage}<br>`;
     let damageTaken = damage - character.armor.defense;
     if(damageTaken < 0){
