@@ -75,4 +75,4 @@ const transitionToCombat = async () => {
     setTimeout(function(){ document.location.replace(`/combatScreen?id=${combatData.dataset.id}&monId=${combatData.dataset.monid}`); }, 7000);
 };
 
-// window.addEventListener('load', transitionToCombat);
+window.addEventListener('load', transitionToCombat);
