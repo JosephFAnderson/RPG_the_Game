@@ -1547,6 +1547,78 @@ body.open .inventoryContent {
     font-size: 18px;
     transition: 0.5s ease;
 }
+/* signup css */
+.signup-bg{
+    background-image: url('/images/signup-bg.jpg');
+    place-items: center;
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+
+}
+.signup-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background-image: url('/images/paper_scroll_1.png');
+    background-size: 1500px 700px;
+    background-repeat: no-repeat;
+    background-position: center;   
+}
+#signup-user{
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left:200px;
+}
+#signup-email{
+
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+
+}
+#signup-password{
+    justify-content: center;
+    align-items: center;
+
+
+}
+.signup-bg h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0%;
+    font-family: titleFont;
+    color: rgba(92, 14, 14, .9);
+        font-size: 26px;
+       margin-top: 5%;
+
+
+}
+
+.signup-form label{
+        font-family: titleFont;
+        font-size: 26px;
+        color: rgba(92, 14, 14, .9);
+        -webkit-text-stroke: 0.1px black;
+}
+
+#signUpBtn{
+    background:rgba(0,0,0,0);   
+    font-family: titleFont;
+    font-size: 26px; 
+    position: relative;
+    top: 10px;
+    bottom: 10px;
+}
 
 #createBtn1 {
     background-color: rgba(92, 14, 14, 0);
