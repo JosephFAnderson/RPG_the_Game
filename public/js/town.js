@@ -3,7 +3,7 @@ const characterMenu = async () => {
 }
 
 const logout = async () => {
-    document.location.replace(`/login`)
+    document.location.replace(`/`)
 }
 
 const arena = async () => {
