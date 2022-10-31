@@ -98,7 +98,7 @@ input[type=number]::-webkit-outer-spin-button {
     justify-content: space-around;
     align-items: center;
     height: 100vh;
-    background-image: url("/images/adventurebg.jpg");
+    background-image: url("/images/knights-canyon-challenge-dragon-digital-painting.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     font-family: titleFont;
@@ -123,12 +123,10 @@ input[type=number]::-webkit-outer-spin-button {
 
 .monLv{
     text-align: center;
+    font-size: large;
+    color: rgb(213, 213, 213);
 }
 
-#return{
-    margin: 0 auto;
-    display: block;
-}
 
 .character{
     display: flex;
@@ -1170,6 +1168,9 @@ body.open .inventoryContent {
     cursor: pointer;
     -webkit-appearance: none;
     border: none;
+    margin: 0 auto;
+    display: block;
+    font-size: larger ;
 }
 
 
