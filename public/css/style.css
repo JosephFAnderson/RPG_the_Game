@@ -159,6 +159,7 @@ input[type=number]::-webkit-outer-spin-button {
     background-image: url('/images/arena.jpg');
     background-size: cover;
     height: 100vh;
+    
 }
 
 .oppList h3{
@@ -176,6 +177,22 @@ input[type=number]::-webkit-outer-spin-button {
     margin: auto;
     overflow-y: scroll;
     overflow-x: visible;
+}
+
+#oppContainer::-webkit-scrollbar{
+   width: 20px;
+   background-color: gray;
+}
+
+#oppContainer::-webkit-scrollbar-button{
+    width: 20px;
+    background-image: url('https://www.seekpng.com/png/full/127-1274005_up-arrow-up-arrow-sign.png');
+    background-size: 
+}
+
+#oppContainer::-webkit-scrollbar-thumb{
+    width: 100px;
+    
 }
 
 .opponent{
