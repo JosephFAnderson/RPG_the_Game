@@ -155,6 +155,8 @@ const getReady = async () => {
 
 const flee = () => {
     fleeBTN.disabled = "disabled";
+    const cLog = document.querySelector('#combatLog');
+    cLog.innerHTML = "";
     const damage = monster.strength;
     cLog.innerHTML += `${monster.name} attacks ${character.name} for ${damage}<br>`;
     let damageTaken = damage - character.armor.defense;
