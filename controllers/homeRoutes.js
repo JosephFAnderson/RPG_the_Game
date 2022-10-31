@@ -95,6 +95,7 @@ router.get('/adventure/:id', withAuth, accountAuth, async (req, res) => {
         res.status(500).json(err);
     }    
 });
+
 router.get('/combatScreen/', withAuth, accountAuth, async (req,res) => {    
     try{
         const charData = await Character.findByPk(req.query.id);
@@ -129,4 +130,16 @@ router.get('/traveling', withAuth, accountAuth, async (req, res) => {
     }   
 });
 
+router.get('/arenaCombat', withAuth, accountAuth, async (req,res) => {    
+    try{
+        const charData = await Character.findByPk(req.query.id);
+        const character = charData.get({plain:true});
+        const oppData = await Character.findByPk(req.query.opp_id);
+        const opponent = oppData.get({ plain: true });        
+
+        res.render('arenaCombat', {character, opponent});
+    }catch(err){
+        res.status(500).json(err);
+}    
+});
 module.exports = router;
