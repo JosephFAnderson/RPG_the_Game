@@ -159,18 +159,19 @@ const flee = () => {
     cLog.innerHTML = "";
     const damage = roll(`${monster.damage}+${monster.strength}`);
     cLog.innerHTML += `${monster.name} attacks ${character.name} for ${damage}<br>`;
-    let damageTaken = damage - character.armor.defense;
+    let damageTaken = damage - character.armor.defense - character.defense;
     if(damageTaken < 0){
         damageTaken = 0;
     }
 
     cLog.innerHTML += `${character.name} takes ${damageTaken} after armor<br>`;
-    character.health -= damageTaken;
-    if(character.health < 1){
+    character.curHealth -= damageTaken;
+    reducePlayerHPBar(getHP(character));
+    if(character.curHealth < 1){
         defeat();
         return;
     }else{
-        cLog.innerHTML += `${character.name} has ${character.health} health left<br>`
+        cLog.innerHTML += `${character.name} has ${character.curHealth} health left<br>`
         setInterval(() => {
             document.location.replace(`/town/${charEl.dataset.id}`);
         }, 2000);
